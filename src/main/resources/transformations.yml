@@ -1,0 +1,972 @@
+# 右键锯木台的转化规则（独立配置文件，可删除/调整顺序/新增）。
+# Right-click transformation rules (standalone file; delete, reorder, or add).
+# 每条规则：input=输入物品，output=输出物品；
+# Each rule: input=item in, output=item out;
+#   input-amount=每次消耗的原料数量，output-amount=每次产出的产物数量。
+#   input-amount=items consumed per craft, output-amount=items produced per craft.
+# 普通右键转化 1 份配方；潜行右键是否转化手中整组由 config.yml 的 transform.sneak-all 控制。
+# Normal right-click crafts 1 recipe; sneaking is controlled by transform.sneak-all in config.yml.
+# 同一输入有多条规则时，按顺序取第一条。
+# When one input has multiple rules, the first match wins.
+#
+# ┌─ 目前内置的转化链（1:1）────────────────────────────┐
+# │ 原木/菌柄 → 去皮木/去皮菌柄 → 栅栏 → 栅栏门 → 按钮     │
+# │ 木板 → 楼梯 → 半砖 → 压力板 → 按钮                   │
+# │ 门 → 活板门 → 按钮                                 │
+# │ 树苗 → 木棍；                                      │
+# │ 花丛 → 小花；大型垂滴叶 → 小型垂滴叶                  │
+# │ 珊瑚块 → 珊瑚；蜘蛛网 → 蜘蛛丝                       │
+# │ 床 → 羊毛 → 地毯 → 线                              │
+# └──────────────────────────────────────────────────┘
+rules:
+    # 橡木原木 → 去皮橡木原木
+    - input: minecraft:oak_log
+      output: minecraft:stripped_oak_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮橡木原木 → 橡木栅栏
+    - input: minecraft:stripped_oak_log
+      output: minecraft:oak_fence
+      input-amount: 1
+      output-amount: 1
+    # 橡木木板 → 橡木楼梯
+    - input: minecraft:oak_planks
+      output: minecraft:oak_stairs
+      input-amount: 1
+      output-amount: 1
+    # 橡木楼梯 → 橡木半砖
+    - input: minecraft:oak_stairs
+      output: minecraft:oak_slab
+      input-amount: 1
+      output-amount: 1
+    # 橡木半砖 → 橡木压力板
+    - input: minecraft:oak_slab
+      output: minecraft:oak_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 橡木压力板 → 橡木按钮
+    - input: minecraft:oak_pressure_plate
+      output: minecraft:oak_button
+      input-amount: 1
+      output-amount: 1
+    # 橡木门 → 橡木活板门
+    - input: minecraft:oak_door
+      output: minecraft:oak_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 橡木活板门 → 橡木按钮
+    - input: minecraft:oak_trapdoor
+      output: minecraft:oak_button
+      input-amount: 1
+      output-amount: 1
+    # 橡木栅栏 → 橡木栅栏门
+    - input: minecraft:oak_fence
+      output: minecraft:oak_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 橡木栅栏门 → 橡木按钮
+    - input: minecraft:oak_fence_gate
+      output: minecraft:oak_button
+      input-amount: 1
+      output-amount: 1
+    # 云杉木原木 → 去皮云杉木原木
+    - input: minecraft:spruce_log
+      output: minecraft:stripped_spruce_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮云杉木原木 → 云杉木栅栏
+    - input: minecraft:stripped_spruce_log
+      output: minecraft:spruce_fence
+      input-amount: 1
+      output-amount: 1
+    # 云杉木木板 → 云杉木楼梯
+    - input: minecraft:spruce_planks
+      output: minecraft:spruce_stairs
+      input-amount: 1
+      output-amount: 1
+    # 云杉木楼梯 → 云杉木半砖
+    - input: minecraft:spruce_stairs
+      output: minecraft:spruce_slab
+      input-amount: 1
+      output-amount: 1
+    # 云杉木半砖 → 云杉木压力板
+    - input: minecraft:spruce_slab
+      output: minecraft:spruce_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 云杉木压力板 → 云杉木按钮
+    - input: minecraft:spruce_pressure_plate
+      output: minecraft:spruce_button
+      input-amount: 1
+      output-amount: 1
+    # 云杉木门 → 云杉木活板门
+    - input: minecraft:spruce_door
+      output: minecraft:spruce_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 云杉木活板门 → 云杉木按钮
+    - input: minecraft:spruce_trapdoor
+      output: minecraft:spruce_button
+      input-amount: 1
+      output-amount: 1
+    # 云杉木栅栏 → 云杉木栅栏门
+    - input: minecraft:spruce_fence
+      output: minecraft:spruce_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 云杉木栅栏门 → 云杉木按钮
+    - input: minecraft:spruce_fence_gate
+      output: minecraft:spruce_button
+      input-amount: 1
+      output-amount: 1
+    # 白桦木原木 → 去皮白桦木原木
+    - input: minecraft:birch_log
+      output: minecraft:stripped_birch_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮白桦木原木 → 白桦木栅栏
+    - input: minecraft:stripped_birch_log
+      output: minecraft:birch_fence
+      input-amount: 1
+      output-amount: 1
+    # 白桦木木板 → 白桦木楼梯
+    - input: minecraft:birch_planks
+      output: minecraft:birch_stairs
+      input-amount: 1
+      output-amount: 1
+    # 白桦木楼梯 → 白桦木半砖
+    - input: minecraft:birch_stairs
+      output: minecraft:birch_slab
+      input-amount: 1
+      output-amount: 1
+    # 白桦木半砖 → 白桦木压力板
+    - input: minecraft:birch_slab
+      output: minecraft:birch_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 白桦木压力板 → 白桦木按钮
+    - input: minecraft:birch_pressure_plate
+      output: minecraft:birch_button
+      input-amount: 1
+      output-amount: 1
+    # 白桦木门 → 白桦木活板门
+    - input: minecraft:birch_door
+      output: minecraft:birch_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 白桦木活板门 → 白桦木按钮
+    - input: minecraft:birch_trapdoor
+      output: minecraft:birch_button
+      input-amount: 1
+      output-amount: 1
+    # 白桦木栅栏 → 白桦木栅栏门
+    - input: minecraft:birch_fence
+      output: minecraft:birch_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 白桦木栅栏门 → 白桦木按钮
+    - input: minecraft:birch_fence_gate
+      output: minecraft:birch_button
+      input-amount: 1
+      output-amount: 1
+    # 丛林木原木 → 去皮丛林木原木
+    - input: minecraft:jungle_log
+      output: minecraft:stripped_jungle_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮丛林木原木 → 丛林木栅栏
+    - input: minecraft:stripped_jungle_log
+      output: minecraft:jungle_fence
+      input-amount: 1
+      output-amount: 1
+    # 丛林木木板 → 丛林木楼梯
+    - input: minecraft:jungle_planks
+      output: minecraft:jungle_stairs
+      input-amount: 1
+      output-amount: 1
+    # 丛林木楼梯 → 丛林木半砖
+    - input: minecraft:jungle_stairs
+      output: minecraft:jungle_slab
+      input-amount: 1
+      output-amount: 1
+    # 丛林木半砖 → 丛林木压力板
+    - input: minecraft:jungle_slab
+      output: minecraft:jungle_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 丛林木压力板 → 丛林木按钮
+    - input: minecraft:jungle_pressure_plate
+      output: minecraft:jungle_button
+      input-amount: 1
+      output-amount: 1
+    # 丛林木门 → 丛林木活板门
+    - input: minecraft:jungle_door
+      output: minecraft:jungle_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 丛林木活板门 → 丛林木按钮
+    - input: minecraft:jungle_trapdoor
+      output: minecraft:jungle_button
+      input-amount: 1
+      output-amount: 1
+    # 丛林木栅栏 → 丛林木栅栏门
+    - input: minecraft:jungle_fence
+      output: minecraft:jungle_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 丛林木栅栏门 → 丛林木按钮
+    - input: minecraft:jungle_fence_gate
+      output: minecraft:jungle_button
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木原木 → 去皮金合欢木原木
+    - input: minecraft:acacia_log
+      output: minecraft:stripped_acacia_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮金合欢木原木 → 金合欢木栅栏
+    - input: minecraft:stripped_acacia_log
+      output: minecraft:acacia_fence
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木木板 → 金合欢木楼梯
+    - input: minecraft:acacia_planks
+      output: minecraft:acacia_stairs
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木楼梯 → 金合欢木半砖
+    - input: minecraft:acacia_stairs
+      output: minecraft:acacia_slab
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木半砖 → 金合欢木压力板
+    - input: minecraft:acacia_slab
+      output: minecraft:acacia_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木压力板 → 金合欢木按钮
+    - input: minecraft:acacia_pressure_plate
+      output: minecraft:acacia_button
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木门 → 金合欢木活板门
+    - input: minecraft:acacia_door
+      output: minecraft:acacia_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木活板门 → 金合欢木按钮
+    - input: minecraft:acacia_trapdoor
+      output: minecraft:acacia_button
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木栅栏 → 金合欢木栅栏门
+    - input: minecraft:acacia_fence
+      output: minecraft:acacia_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 金合欢木栅栏门 → 金合欢木按钮
+    - input: minecraft:acacia_fence_gate
+      output: minecraft:acacia_button
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木原木 → 去皮深色橡木原木
+    - input: minecraft:dark_oak_log
+      output: minecraft:stripped_dark_oak_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮深色橡木原木 → 深色橡木栅栏
+    - input: minecraft:stripped_dark_oak_log
+      output: minecraft:dark_oak_fence
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木木板 → 深色橡木楼梯
+    - input: minecraft:dark_oak_planks
+      output: minecraft:dark_oak_stairs
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木楼梯 → 深色橡木半砖
+    - input: minecraft:dark_oak_stairs
+      output: minecraft:dark_oak_slab
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木半砖 → 深色橡木压力板
+    - input: minecraft:dark_oak_slab
+      output: minecraft:dark_oak_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木压力板 → 深色橡木按钮
+    - input: minecraft:dark_oak_pressure_plate
+      output: minecraft:dark_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木门 → 深色橡木活板门
+    - input: minecraft:dark_oak_door
+      output: minecraft:dark_oak_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木活板门 → 深色橡木按钮
+    - input: minecraft:dark_oak_trapdoor
+      output: minecraft:dark_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木栅栏 → 深色橡木栅栏门
+    - input: minecraft:dark_oak_fence
+      output: minecraft:dark_oak_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 深色橡木栅栏门 → 深色橡木按钮
+    - input: minecraft:dark_oak_fence_gate
+      output: minecraft:dark_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 红树木原木 → 去皮红树木原木
+    - input: minecraft:mangrove_log
+      output: minecraft:stripped_mangrove_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮红树木原木 → 红树木栅栏
+    - input: minecraft:stripped_mangrove_log
+      output: minecraft:mangrove_fence
+      input-amount: 1
+      output-amount: 1
+    # 红树木木板 → 红树木楼梯
+    - input: minecraft:mangrove_planks
+      output: minecraft:mangrove_stairs
+      input-amount: 1
+      output-amount: 1
+    # 红树木楼梯 → 红树木半砖
+    - input: minecraft:mangrove_stairs
+      output: minecraft:mangrove_slab
+      input-amount: 1
+      output-amount: 1
+    # 红树木半砖 → 红树木压力板
+    - input: minecraft:mangrove_slab
+      output: minecraft:mangrove_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 红树木压力板 → 红树木按钮
+    - input: minecraft:mangrove_pressure_plate
+      output: minecraft:mangrove_button
+      input-amount: 1
+      output-amount: 1
+    # 红树木门 → 红树木活板门
+    - input: minecraft:mangrove_door
+      output: minecraft:mangrove_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 红树木活板门 → 红树木按钮
+    - input: minecraft:mangrove_trapdoor
+      output: minecraft:mangrove_button
+      input-amount: 1
+      output-amount: 1
+    # 红树木栅栏 → 红树木栅栏门
+    - input: minecraft:mangrove_fence
+      output: minecraft:mangrove_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 红树木栅栏门 → 红树木按钮
+    - input: minecraft:mangrove_fence_gate
+      output: minecraft:mangrove_button
+      input-amount: 1
+      output-amount: 1
+    # 樱花木原木 → 去皮樱花木原木
+    - input: minecraft:cherry_log
+      output: minecraft:stripped_cherry_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮樱花木原木 → 樱花木栅栏
+    - input: minecraft:stripped_cherry_log
+      output: minecraft:cherry_fence
+      input-amount: 1
+      output-amount: 1
+    # 樱花木木板 → 樱花木楼梯
+    - input: minecraft:cherry_planks
+      output: minecraft:cherry_stairs
+      input-amount: 1
+      output-amount: 1
+    # 樱花木楼梯 → 樱花木半砖
+    - input: minecraft:cherry_stairs
+      output: minecraft:cherry_slab
+      input-amount: 1
+      output-amount: 1
+    # 樱花木半砖 → 樱花木压力板
+    - input: minecraft:cherry_slab
+      output: minecraft:cherry_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 樱花木压力板 → 樱花木按钮
+    - input: minecraft:cherry_pressure_plate
+      output: minecraft:cherry_button
+      input-amount: 1
+      output-amount: 1
+    # 樱花木门 → 樱花木活板门
+    - input: minecraft:cherry_door
+      output: minecraft:cherry_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 樱花木活板门 → 樱花木按钮
+    - input: minecraft:cherry_trapdoor
+      output: minecraft:cherry_button
+      input-amount: 1
+      output-amount: 1
+    # 樱花木栅栏 → 樱花木栅栏门
+    - input: minecraft:cherry_fence
+      output: minecraft:cherry_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 樱花木栅栏门 → 樱花木按钮
+    - input: minecraft:cherry_fence_gate
+      output: minecraft:cherry_button
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木原木 → 去皮苍白橡木原木
+    - input: minecraft:pale_oak_log
+      output: minecraft:stripped_pale_oak_log
+      input-amount: 1
+      output-amount: 1
+    # 去皮苍白橡木原木 → 苍白橡木栅栏
+    - input: minecraft:stripped_pale_oak_log
+      output: minecraft:pale_oak_fence
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木木板 → 苍白橡木楼梯
+    - input: minecraft:pale_oak_planks
+      output: minecraft:pale_oak_stairs
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木楼梯 → 苍白橡木半砖
+    - input: minecraft:pale_oak_stairs
+      output: minecraft:pale_oak_slab
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木半砖 → 苍白橡木压力板
+    - input: minecraft:pale_oak_slab
+      output: minecraft:pale_oak_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木压力板 → 苍白橡木按钮
+    - input: minecraft:pale_oak_pressure_plate
+      output: minecraft:pale_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木门 → 苍白橡木活板门
+    - input: minecraft:pale_oak_door
+      output: minecraft:pale_oak_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木活板门 → 苍白橡木按钮
+    - input: minecraft:pale_oak_trapdoor
+      output: minecraft:pale_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木栅栏 → 苍白橡木栅栏门
+    - input: minecraft:pale_oak_fence
+      output: minecraft:pale_oak_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡木栅栏门 → 苍白橡木按钮
+    - input: minecraft:pale_oak_fence_gate
+      output: minecraft:pale_oak_button
+      input-amount: 1
+      output-amount: 1
+    # 竹块 → 去皮竹块
+    - input: minecraft:bamboo_block
+      output: minecraft:stripped_bamboo_block
+      input-amount: 1
+      output-amount: 1
+    # 去皮竹块 → 竹栅栏
+    - input: minecraft:stripped_bamboo_block
+      output: minecraft:bamboo_fence
+      input-amount: 1
+      output-amount: 1
+    # 竹木板 → 竹楼梯
+    - input: minecraft:bamboo_planks
+      output: minecraft:bamboo_stairs
+      input-amount: 1
+      output-amount: 1
+    # 竹楼梯 → 竹半砖
+    - input: minecraft:bamboo_stairs
+      output: minecraft:bamboo_slab
+      input-amount: 1
+      output-amount: 1
+    # 竹半砖 → 竹压力板
+    - input: minecraft:bamboo_slab
+      output: minecraft:bamboo_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 竹压力板 → 竹按钮
+    - input: minecraft:bamboo_pressure_plate
+      output: minecraft:bamboo_button
+      input-amount: 1
+      output-amount: 1
+    # 竹门 → 竹活板门
+    - input: minecraft:bamboo_door
+      output: minecraft:bamboo_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 竹活板门 → 竹按钮
+    - input: minecraft:bamboo_trapdoor
+      output: minecraft:bamboo_button
+      input-amount: 1
+      output-amount: 1
+    # 竹栅栏 → 竹栅栏门
+    - input: minecraft:bamboo_fence
+      output: minecraft:bamboo_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 竹栅栏门 → 竹按钮
+    - input: minecraft:bamboo_fence_gate
+      output: minecraft:bamboo_button
+      input-amount: 1
+      output-amount: 1
+    # 绯红菌柄 → 去皮绯红菌柄
+    - input: minecraft:crimson_stem
+      output: minecraft:stripped_crimson_stem
+      input-amount: 1
+      output-amount: 1
+    # 去皮绯红菌柄 → 绯红木栅栏
+    - input: minecraft:stripped_crimson_stem
+      output: minecraft:crimson_fence
+      input-amount: 1
+      output-amount: 1
+    # 绯红木木板 → 绯红木楼梯
+    - input: minecraft:crimson_planks
+      output: minecraft:crimson_stairs
+      input-amount: 1
+      output-amount: 1
+    # 绯红木楼梯 → 绯红木半砖
+    - input: minecraft:crimson_stairs
+      output: minecraft:crimson_slab
+      input-amount: 1
+      output-amount: 1
+    # 绯红木半砖 → 绯红木压力板
+    - input: minecraft:crimson_slab
+      output: minecraft:crimson_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 绯红木压力板 → 绯红木按钮
+    - input: minecraft:crimson_pressure_plate
+      output: minecraft:crimson_button
+      input-amount: 1
+      output-amount: 1
+    # 绯红木门 → 绯红木活板门
+    - input: minecraft:crimson_door
+      output: minecraft:crimson_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 绯红木活板门 → 绯红木按钮
+    - input: minecraft:crimson_trapdoor
+      output: minecraft:crimson_button
+      input-amount: 1
+      output-amount: 1
+    # 绯红木栅栏 → 绯红木栅栏门
+    - input: minecraft:crimson_fence
+      output: minecraft:crimson_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 绯红木栅栏门 → 绯红木按钮
+    - input: minecraft:crimson_fence_gate
+      output: minecraft:crimson_button
+      input-amount: 1
+      output-amount: 1
+    # 诡异菌柄 → 去皮诡异菌柄
+    - input: minecraft:warped_stem
+      output: minecraft:stripped_warped_stem
+      input-amount: 1
+      output-amount: 1
+    # 去皮诡异菌柄 → 诡异木栅栏
+    - input: minecraft:stripped_warped_stem
+      output: minecraft:warped_fence
+      input-amount: 1
+      output-amount: 1
+    # 诡异木木板 → 诡异木楼梯
+    - input: minecraft:warped_planks
+      output: minecraft:warped_stairs
+      input-amount: 1
+      output-amount: 1
+    # 诡异木楼梯 → 诡异木半砖
+    - input: minecraft:warped_stairs
+      output: minecraft:warped_slab
+      input-amount: 1
+      output-amount: 1
+    # 诡异木半砖 → 诡异木压力板
+    - input: minecraft:warped_slab
+      output: minecraft:warped_pressure_plate
+      input-amount: 1
+      output-amount: 1
+    # 诡异木压力板 → 诡异木按钮
+    - input: minecraft:warped_pressure_plate
+      output: minecraft:warped_button
+      input-amount: 1
+      output-amount: 1
+    # 诡异木门 → 诡异木活板门
+    - input: minecraft:warped_door
+      output: minecraft:warped_trapdoor
+      input-amount: 1
+      output-amount: 1
+    # 诡异木活板门 → 诡异木按钮
+    - input: minecraft:warped_trapdoor
+      output: minecraft:warped_button
+      input-amount: 1
+      output-amount: 1
+    # 诡异木栅栏 → 诡异木栅栏门
+    - input: minecraft:warped_fence
+      output: minecraft:warped_fence_gate
+      input-amount: 1
+      output-amount: 1
+    # 诡异木栅栏门 → 诡异木按钮
+    - input: minecraft:warped_fence_gate
+      output: minecraft:warped_button
+      input-amount: 1
+      output-amount: 1
+
+  # ==== 树苗 → 木棍 ====
+    # 橡木树苗 → 木棍
+    - input: minecraft:oak_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 云杉树苗 → 木棍
+    - input: minecraft:spruce_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 白桦树苗 → 木棍
+    - input: minecraft:birch_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 丛林树苗 → 木棍
+    - input: minecraft:jungle_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 金合欢树苗 → 木棍
+    - input: minecraft:acacia_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 深色橡树苗 → 木棍
+    - input: minecraft:dark_oak_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 红树胎生苗 → 木棍
+    - input: minecraft:mangrove_propagule
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 樱花树苗 → 木棍
+    - input: minecraft:cherry_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+    # 苍白橡树苗 → 木棍
+    - input: minecraft:pale_oak_sapling
+      output: minecraft:stick
+      input-amount: 1
+      output-amount: 1
+
+  # ==== 花丛 → 小花 ====
+    # 向日葵 → 蒲公英
+    - input: minecraft:sunflower
+      output: minecraft:dandelion
+      input-amount: 1
+      output-amount: 1
+    # 丁香 → 绒球葱
+    - input: minecraft:lilac
+      output: minecraft:allium
+      input-amount: 1
+      output-amount: 1
+    # 玫瑰丛 → 虞美人
+    - input: minecraft:rose_bush
+      output: minecraft:poppy
+      input-amount: 1
+      output-amount: 1
+    # 牡丹 → 粉红郁金香
+    - input: minecraft:peony
+      output: minecraft:pink_tulip
+      input-amount: 1
+      output-amount: 1
+    # 大型垂滴叶 → 小型垂滴叶
+    - input: minecraft:big_dripleaf
+      output: minecraft:small_dripleaf
+      input-amount: 1
+      output-amount: 1
+
+  # ==== 珊瑚块 → 珊瑚 ====
+    # 管珊瑚块 → 管珊瑚
+    - input: minecraft:tube_coral_block
+      output: minecraft:tube_coral
+      input-amount: 1
+      output-amount: 1
+    # 脑纹珊瑚块 → 脑纹珊瑚
+    - input: minecraft:brain_coral_block
+      output: minecraft:brain_coral
+      input-amount: 1
+      output-amount: 1
+    # 气泡珊瑚块 → 气泡珊瑚
+    - input: minecraft:bubble_coral_block
+      output: minecraft:bubble_coral
+      input-amount: 1
+      output-amount: 1
+    # 火珊瑚块 → 火珊瑚
+    - input: minecraft:fire_coral_block
+      output: minecraft:fire_coral
+      input-amount: 1
+      output-amount: 1
+    # 鹿角珊瑚块 → 鹿角珊瑚
+    - input: minecraft:horn_coral_block
+      output: minecraft:horn_coral
+      input-amount: 1
+      output-amount: 1
+
+  # ==== 蜘蛛网 → 蜘蛛丝 ====
+    # 蜘蛛网 → 蜘蛛丝
+    - input: minecraft:cobweb
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+
+  # ==== 床 → 羊毛 → 地毯 → 线 ====
+    # 白色床 → 白色羊毛
+    - input: minecraft:white_bed
+      output: minecraft:white_wool
+      input-amount: 1
+      output-amount: 1
+    # 橙色床 → 橙色羊毛
+    - input: minecraft:orange_bed
+      output: minecraft:orange_wool
+      input-amount: 1
+      output-amount: 1
+    # 品红色床 → 品红色羊毛
+    - input: minecraft:magenta_bed
+      output: minecraft:magenta_wool
+      input-amount: 1
+      output-amount: 1
+    # 淡蓝色床 → 淡蓝色羊毛
+    - input: minecraft:light_blue_bed
+      output: minecraft:light_blue_wool
+      input-amount: 1
+      output-amount: 1
+    # 黄色床 → 黄色羊毛
+    - input: minecraft:yellow_bed
+      output: minecraft:yellow_wool
+      input-amount: 1
+      output-amount: 1
+    # 黄绿色床 → 黄绿色羊毛
+    - input: minecraft:lime_bed
+      output: minecraft:lime_wool
+      input-amount: 1
+      output-amount: 1
+    # 粉红色床 → 粉红色羊毛
+    - input: minecraft:pink_bed
+      output: minecraft:pink_wool
+      input-amount: 1
+      output-amount: 1
+    # 灰色床 → 灰色羊毛
+    - input: minecraft:gray_bed
+      output: minecraft:gray_wool
+      input-amount: 1
+      output-amount: 1
+    # 淡灰色床 → 淡灰色羊毛
+    - input: minecraft:light_gray_bed
+      output: minecraft:light_gray_wool
+      input-amount: 1
+      output-amount: 1
+    # 青色床 → 青色羊毛
+    - input: minecraft:cyan_bed
+      output: minecraft:cyan_wool
+      input-amount: 1
+      output-amount: 1
+    # 紫色床 → 紫色羊毛
+    - input: minecraft:purple_bed
+      output: minecraft:purple_wool
+      input-amount: 1
+      output-amount: 1
+    # 蓝色床 → 蓝色羊毛
+    - input: minecraft:blue_bed
+      output: minecraft:blue_wool
+      input-amount: 1
+      output-amount: 1
+    # 棕色床 → 棕色羊毛
+    - input: minecraft:brown_bed
+      output: minecraft:brown_wool
+      input-amount: 1
+      output-amount: 1
+    # 绿色床 → 绿色羊毛
+    - input: minecraft:green_bed
+      output: minecraft:green_wool
+      input-amount: 1
+      output-amount: 1
+    # 红色床 → 红色羊毛
+    - input: minecraft:red_bed
+      output: minecraft:red_wool
+      input-amount: 1
+      output-amount: 1
+    # 黑色床 → 黑色羊毛
+    - input: minecraft:black_bed
+      output: minecraft:black_wool
+      input-amount: 1
+      output-amount: 1
+    # 白色羊毛 → 白色地毯
+    - input: minecraft:white_wool
+      output: minecraft:white_carpet
+      input-amount: 1
+      output-amount: 1
+    # 橙色羊毛 → 橙色地毯
+    - input: minecraft:orange_wool
+      output: minecraft:orange_carpet
+      input-amount: 1
+      output-amount: 1
+    # 品红色羊毛 → 品红色地毯
+    - input: minecraft:magenta_wool
+      output: minecraft:magenta_carpet
+      input-amount: 1
+      output-amount: 1
+    # 淡蓝色羊毛 → 淡蓝色地毯
+    - input: minecraft:light_blue_wool
+      output: minecraft:light_blue_carpet
+      input-amount: 1
+      output-amount: 1
+    # 黄色羊毛 → 黄色地毯
+    - input: minecraft:yellow_wool
+      output: minecraft:yellow_carpet
+      input-amount: 1
+      output-amount: 1
+    # 黄绿色羊毛 → 黄绿色地毯
+    - input: minecraft:lime_wool
+      output: minecraft:lime_carpet
+      input-amount: 1
+      output-amount: 1
+    # 粉红色羊毛 → 粉红色地毯
+    - input: minecraft:pink_wool
+      output: minecraft:pink_carpet
+      input-amount: 1
+      output-amount: 1
+    # 灰色羊毛 → 灰色地毯
+    - input: minecraft:gray_wool
+      output: minecraft:gray_carpet
+      input-amount: 1
+      output-amount: 1
+    # 淡灰色羊毛 → 淡灰色地毯
+    - input: minecraft:light_gray_wool
+      output: minecraft:light_gray_carpet
+      input-amount: 1
+      output-amount: 1
+    # 青色羊毛 → 青色地毯
+    - input: minecraft:cyan_wool
+      output: minecraft:cyan_carpet
+      input-amount: 1
+      output-amount: 1
+    # 紫色羊毛 → 紫色地毯
+    - input: minecraft:purple_wool
+      output: minecraft:purple_carpet
+      input-amount: 1
+      output-amount: 1
+    # 蓝色羊毛 → 蓝色地毯
+    - input: minecraft:blue_wool
+      output: minecraft:blue_carpet
+      input-amount: 1
+      output-amount: 1
+    # 棕色羊毛 → 棕色地毯
+    - input: minecraft:brown_wool
+      output: minecraft:brown_carpet
+      input-amount: 1
+      output-amount: 1
+    # 绿色羊毛 → 绿色地毯
+    - input: minecraft:green_wool
+      output: minecraft:green_carpet
+      input-amount: 1
+      output-amount: 1
+    # 红色羊毛 → 红色地毯
+    - input: minecraft:red_wool
+      output: minecraft:red_carpet
+      input-amount: 1
+      output-amount: 1
+    # 黑色羊毛 → 黑色地毯
+    - input: minecraft:black_wool
+      output: minecraft:black_carpet
+      input-amount: 1
+      output-amount: 1
+    # 白色地毯 → 线
+    - input: minecraft:white_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 橙色地毯 → 线
+    - input: minecraft:orange_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 品红色地毯 → 线
+    - input: minecraft:magenta_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 淡蓝色地毯 → 线
+    - input: minecraft:light_blue_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 黄色地毯 → 线
+    - input: minecraft:yellow_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 黄绿色地毯 → 线
+    - input: minecraft:lime_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 粉红色地毯 → 线
+    - input: minecraft:pink_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 灰色地毯 → 线
+    - input: minecraft:gray_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 淡灰色地毯 → 线
+    - input: minecraft:light_gray_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 青色地毯 → 线
+    - input: minecraft:cyan_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 紫色地毯 → 线
+    - input: minecraft:purple_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 蓝色地毯 → 线
+    - input: minecraft:blue_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 棕色地毯 → 线
+    - input: minecraft:brown_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 绿色地毯 → 线
+    - input: minecraft:green_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 红色地毯 → 线
+    - input: minecraft:red_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+    # 黑色地毯 → 线
+    - input: minecraft:black_carpet
+      output: minecraft:string
+      input-amount: 1
+      output-amount: 1
+

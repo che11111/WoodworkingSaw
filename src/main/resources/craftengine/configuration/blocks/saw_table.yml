@@ -1,0 +1,67 @@
+items:
+  woodworkingsaw:saw_table:
+    material: minecraft:stonecutter
+    data:
+      item_name: <!i><lang:item.woodworkingsaw.saw_table>
+    model: woodworkingsaw:item/saw_table
+    behavior:
+      type: block_item
+      block: woodworkingsaw:saw_table
+
+blocks:
+  woodworkingsaw:saw_table:
+    state:
+      state: campfire[lit=false,signal_fire=false,facing=north,waterlogged=false]
+      transparent: true
+      entity_renderer:
+        type: item_display
+        item: woodworkingsaw:saw_table
+        display_transform: none
+        translation: 0,0.01,0
+        scale: 1
+        billboard: fixed
+        shadow_radius: 0
+      entity_culling: false
+    settings:
+      hardness: 2.5
+      resistance: 2.5
+      push_reaction: PUSH_PULL
+      map_color: 29
+      require_correct_tools: false
+      incorrect_tool_dig_speed: 0.3
+      can_occlude: false
+      is_suffocating: false
+      is_view_blocking: false
+      use_shape_for_light_occlusion: false
+      propagate_skylight: true
+      block_light: 0
+      item: woodworkingsaw:saw_table
+      correct_tools:
+        - minecraft:wooden_axe
+        - minecraft:stone_axe
+        - minecraft:copper_axe
+        - minecraft:iron_axe
+        - minecraft:golden_axe
+        - minecraft:diamond_axe
+        - minecraft:netherite_axe
+        - minecraft:wooden_pickaxe
+        - minecraft:stone_pickaxe
+        - minecraft:copper_pickaxe
+        - minecraft:iron_pickaxe
+        - minecraft:golden_pickaxe
+        - minecraft:diamond_pickaxe
+        - minecraft:netherite_pickaxe
+      required_break_power: 0
+      tags:
+        - minecraft:mineable/axe
+        - minecraft:mineable/pickaxe
+      destroy_stages:
+        template: internal:destroy_stages
+      sounds:
+        break: minecraft:block.wood.break
+        step: minecraft:block.wood.step
+        place: minecraft:block.wood.place
+        hit: minecraft:block.wood.hit
+        fall: minecraft:block.wood.fall
+    loot:
+      template: default:loot_table/self

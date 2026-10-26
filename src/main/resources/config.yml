@@ -1,0 +1,25 @@
+# 语言：zh_CN 或 en_US。可在 lang/ 目录下编辑对应文案。
+# Language: zh_CN or en_US. Edit messages under lang/.
+language: zh_CN
+
+transform:
+  # 潜行时右键是否转化手中整组
+  # Whether sneaking + right-click transforms the whole stack.
+  sneak-all: true
+
+feedback:
+  # 转化时播放音效 / Play a sound when transforming.
+  sound: true
+  # 转化时显示动作栏提示 / Show an action-bar message when transforming.
+  action-bar: true
+
+craftengine:
+  # 把内置配置与资源包写入 CraftEngine/resources/WoodworkingSaw。
+  # Copy the bundled config and resource pack into CraftEngine/resources/WoodworkingSaw.
+  auto-install: true
+
+
+# 是否启用 bStats 匿名统计
+# Whether to enable bStats anonymous metrics.
+bstats:
+  enabled: true

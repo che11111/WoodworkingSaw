@@ -1,0 +1,1284 @@
+# 「左键锯木台」打开的切石机切割配方（CraftEngine stonecutting 配方）。
+# 插件启动后会把这个文件上传到：
+#   plugins/CraftEngine/resources/WoodworkingSaw/configuration/recipes/saw_table_cutting.yml
+# 要修改配方，直接编辑上面这个已上传的文件，然后执行 /ce reload all 应用；
+# 改回默认值可删除该文件后执行 /sawtable reload 重新上传。
+recipes:
+  woodworkingsaw:oak_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_stairs
+      count: 2
+  woodworkingsaw:oak_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_slab
+      count: 2
+  woodworkingsaw:oak_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_door
+      count: 1
+  woodworkingsaw:oak_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_fence
+      count: 3
+  woodworkingsaw:oak_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_fence_gate
+      count: 1
+  woodworkingsaw:oak_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_button
+      count: 1
+  woodworkingsaw:oak_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_pressure_plate
+      count: 1
+  woodworkingsaw:oak_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_trapdoor
+      count: 1
+  woodworkingsaw:oak_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_sign
+      count: 1
+  woodworkingsaw:oak_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:oak_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:oak_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:oak_planks
+    result:
+      id: minecraft:oak_boat
+      count: 1
+  woodworkingsaw:spruce_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_stairs
+      count: 2
+  woodworkingsaw:spruce_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_slab
+      count: 2
+  woodworkingsaw:spruce_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_door
+      count: 1
+  woodworkingsaw:spruce_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_fence
+      count: 3
+  woodworkingsaw:spruce_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_fence_gate
+      count: 1
+  woodworkingsaw:spruce_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_button
+      count: 1
+  woodworkingsaw:spruce_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_pressure_plate
+      count: 1
+  woodworkingsaw:spruce_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_trapdoor
+      count: 1
+  woodworkingsaw:spruce_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_sign
+      count: 1
+  woodworkingsaw:spruce_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:spruce_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:spruce_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:spruce_planks
+    result:
+      id: minecraft:spruce_boat
+      count: 1
+  woodworkingsaw:birch_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_stairs
+      count: 2
+  woodworkingsaw:birch_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_slab
+      count: 2
+  woodworkingsaw:birch_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_door
+      count: 1
+  woodworkingsaw:birch_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_fence
+      count: 3
+  woodworkingsaw:birch_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_fence_gate
+      count: 1
+  woodworkingsaw:birch_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_button
+      count: 1
+  woodworkingsaw:birch_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_pressure_plate
+      count: 1
+  woodworkingsaw:birch_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_trapdoor
+      count: 1
+  woodworkingsaw:birch_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_sign
+      count: 1
+  woodworkingsaw:birch_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:birch_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:birch_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:birch_planks
+    result:
+      id: minecraft:birch_boat
+      count: 1
+  woodworkingsaw:jungle_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_stairs
+      count: 2
+  woodworkingsaw:jungle_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_slab
+      count: 2
+  woodworkingsaw:jungle_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_door
+      count: 1
+  woodworkingsaw:jungle_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_fence
+      count: 3
+  woodworkingsaw:jungle_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_fence_gate
+      count: 1
+  woodworkingsaw:jungle_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_button
+      count: 1
+  woodworkingsaw:jungle_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_pressure_plate
+      count: 1
+  woodworkingsaw:jungle_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_trapdoor
+      count: 1
+  woodworkingsaw:jungle_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_sign
+      count: 1
+  woodworkingsaw:jungle_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:jungle_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:jungle_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:jungle_planks
+    result:
+      id: minecraft:jungle_boat
+      count: 1
+  woodworkingsaw:acacia_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_stairs
+      count: 2
+  woodworkingsaw:acacia_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_slab
+      count: 2
+  woodworkingsaw:acacia_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_door
+      count: 1
+  woodworkingsaw:acacia_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_fence
+      count: 3
+  woodworkingsaw:acacia_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_fence_gate
+      count: 1
+  woodworkingsaw:acacia_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_button
+      count: 1
+  woodworkingsaw:acacia_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_pressure_plate
+      count: 1
+  woodworkingsaw:acacia_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_trapdoor
+      count: 1
+  woodworkingsaw:acacia_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_sign
+      count: 1
+  woodworkingsaw:acacia_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:acacia_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:acacia_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:acacia_planks
+    result:
+      id: minecraft:acacia_boat
+      count: 1
+  woodworkingsaw:dark_oak_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_stairs
+      count: 2
+  woodworkingsaw:dark_oak_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_slab
+      count: 2
+  woodworkingsaw:dark_oak_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_door
+      count: 1
+  woodworkingsaw:dark_oak_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_fence
+      count: 3
+  woodworkingsaw:dark_oak_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_fence_gate
+      count: 1
+  woodworkingsaw:dark_oak_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_button
+      count: 1
+  woodworkingsaw:dark_oak_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_pressure_plate
+      count: 1
+  woodworkingsaw:dark_oak_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_trapdoor
+      count: 1
+  woodworkingsaw:dark_oak_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_sign
+      count: 1
+  woodworkingsaw:dark_oak_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:dark_oak_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:dark_oak_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:dark_oak_planks
+    result:
+      id: minecraft:dark_oak_boat
+      count: 1
+  woodworkingsaw:mangrove_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_stairs
+      count: 2
+  woodworkingsaw:mangrove_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_slab
+      count: 2
+  woodworkingsaw:mangrove_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_door
+      count: 1
+  woodworkingsaw:mangrove_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_fence
+      count: 3
+  woodworkingsaw:mangrove_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_fence_gate
+      count: 1
+  woodworkingsaw:mangrove_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_button
+      count: 1
+  woodworkingsaw:mangrove_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_pressure_plate
+      count: 1
+  woodworkingsaw:mangrove_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_trapdoor
+      count: 1
+  woodworkingsaw:mangrove_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_sign
+      count: 1
+  woodworkingsaw:mangrove_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:mangrove_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:mangrove_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:mangrove_planks
+    result:
+      id: minecraft:mangrove_boat
+      count: 1
+  woodworkingsaw:cherry_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_stairs
+      count: 2
+  woodworkingsaw:cherry_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_slab
+      count: 2
+  woodworkingsaw:cherry_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_door
+      count: 1
+  woodworkingsaw:cherry_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_fence
+      count: 3
+  woodworkingsaw:cherry_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_fence_gate
+      count: 1
+  woodworkingsaw:cherry_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_button
+      count: 1
+  woodworkingsaw:cherry_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_pressure_plate
+      count: 1
+  woodworkingsaw:cherry_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_trapdoor
+      count: 1
+  woodworkingsaw:cherry_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_sign
+      count: 1
+  woodworkingsaw:cherry_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:cherry_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:cherry_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:cherry_planks
+    result:
+      id: minecraft:cherry_boat
+      count: 1
+  woodworkingsaw:pale_oak_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_stairs
+      count: 2
+  woodworkingsaw:pale_oak_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_slab
+      count: 2
+  woodworkingsaw:pale_oak_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_door
+      count: 1
+  woodworkingsaw:pale_oak_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_fence
+      count: 3
+  woodworkingsaw:pale_oak_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_fence_gate
+      count: 1
+  woodworkingsaw:pale_oak_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_button
+      count: 1
+  woodworkingsaw:pale_oak_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_pressure_plate
+      count: 1
+  woodworkingsaw:pale_oak_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_trapdoor
+      count: 1
+  woodworkingsaw:pale_oak_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_sign
+      count: 1
+  woodworkingsaw:pale_oak_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:pale_oak_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:pale_oak_boat:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:pale_oak_planks
+    result:
+      id: minecraft:pale_oak_boat
+      count: 1
+  woodworkingsaw:bamboo_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_stairs
+      count: 2
+  woodworkingsaw:bamboo_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_slab
+      count: 2
+  woodworkingsaw:bamboo_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_door
+      count: 1
+  woodworkingsaw:bamboo_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_fence
+      count: 3
+  woodworkingsaw:bamboo_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_fence_gate
+      count: 1
+  woodworkingsaw:bamboo_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_button
+      count: 1
+  woodworkingsaw:bamboo_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_pressure_plate
+      count: 1
+  woodworkingsaw:bamboo_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_trapdoor
+      count: 1
+  woodworkingsaw:bamboo_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_sign
+      count: 1
+  woodworkingsaw:bamboo_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:bamboo_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:bamboo_raft:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:bamboo_planks
+    result:
+      id: minecraft:bamboo_raft
+      count: 1
+  woodworkingsaw:crimson_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_stairs
+      count: 2
+  woodworkingsaw:crimson_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_slab
+      count: 2
+  woodworkingsaw:crimson_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_door
+      count: 1
+  woodworkingsaw:crimson_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_fence
+      count: 3
+  woodworkingsaw:crimson_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_fence_gate
+      count: 1
+  woodworkingsaw:crimson_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_button
+      count: 1
+  woodworkingsaw:crimson_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_pressure_plate
+      count: 1
+  woodworkingsaw:crimson_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_trapdoor
+      count: 1
+  woodworkingsaw:crimson_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:crimson_sign
+      count: 1
+  woodworkingsaw:crimson_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:crimson_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:crimson_planks
+    result:
+      id: minecraft:chest
+      count: 1
+  woodworkingsaw:warped_stairs:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_stairs
+      count: 2
+  woodworkingsaw:warped_slab:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_slab
+      count: 2
+  woodworkingsaw:warped_door:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_door
+      count: 1
+  woodworkingsaw:warped_fence:
+    type: stonecutting
+    ingredient:
+      count: 5
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_fence
+      count: 3
+  woodworkingsaw:warped_fence_gate:
+    type: stonecutting
+    ingredient:
+      count: 4
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_fence_gate
+      count: 1
+  woodworkingsaw:warped_button:
+    type: stonecutting
+    ingredient:
+      count: 1
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_button
+      count: 1
+  woodworkingsaw:warped_pressure_plate:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_pressure_plate
+      count: 1
+  woodworkingsaw:warped_trapdoor:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_trapdoor
+      count: 1
+  woodworkingsaw:warped_sign:
+    type: stonecutting
+    ingredient:
+      count: 2
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:warped_sign
+      count: 1
+  woodworkingsaw:warped_bowl:
+    type: stonecutting
+    ingredient:
+      count: 3
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:bowl
+      count: 4
+  woodworkingsaw:warped_chest:
+    type: stonecutting
+    ingredient:
+      count: 8
+      items:
+        - minecraft:warped_planks
+    result:
+      id: minecraft:chest
+      count: 1

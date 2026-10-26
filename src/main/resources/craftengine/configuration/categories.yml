@@ -1,0 +1,8 @@
+categories:
+  woodworkingsaw:items:
+    name: <!i><gold><l10n:category.woodworkingsaw.items></gold>
+    icon: woodworkingsaw:saw_table
+    priority: 10
+    hidden: false
+    list:
+      - woodworkingsaw:saw_table
