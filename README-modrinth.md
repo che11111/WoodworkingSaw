@@ -18,7 +18,7 @@ WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, d
 ## Demo
 
 <p align="center">
-  <img src="https://github.com/che11111/CraftEngineRecipe/blob/main/img/202610300103306.gif?raw=true" alt="WoodworkingSaw demo" width="800">
+  <img src="https://github.com/che11111/WoodworkingSaw/blob/main/img/202610300103306.gif?raw=true" alt="WoodworkingSaw demo" width="800">
 </p>
 
 ## Features
