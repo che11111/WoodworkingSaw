@@ -23,22 +23,29 @@
 
 WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, doors, fences and more, with fully customizable input/output recipes. Requires CraftEngine.
 
-<p align="center">
-  <img src="img/1.png" alt="WoodworkingSaw in game" width="220">
-</p>
+## Features
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="240">
+      <img src="img/1.png" alt="WoodworkingSaw in game" width="220">
+    </td>
+    <td valign="top">
+      <ul>
+        <li>Two recipe systems: the saw table's own transformation rules, plus vanilla stonecutter recipes injected into CraftEngine.</li>
+        <li>Left-click with an empty hand opens the vanilla stonecutter GUI to cut planks into stairs, slabs, doors, fences, signs, bowls, chests, boats, and more.</li>
+        <li>Right-click with an item transforms it (one by default; sneak to transform the whole stack). Rules and ratios are in <code>transformations.yml</code> and fully customizable.</li>
+        <li>Automatically uploads the resource pack to CraftEngine; run <code>/ce reload all</code> to apply it.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## Demo
 
 <p align="center">
   <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
 </p>
-
-## Features
-
-- Two recipe systems: the saw table's own transformation rules, plus vanilla stonecutter recipes injected into CraftEngine.
-- Left-click with an empty hand opens the vanilla stonecutter GUI to cut planks into stairs, slabs, doors, fences, signs, bowls, chests, boats, and more.
-- Right-click with an item transforms it (one by default; sneak to transform the whole stack). Rules and ratios are in `transformations.yml` and fully customizable.
-- Automatically uploads the resource pack to CraftEngine; run `/ce reload all` to apply it.
 
 ## Compatibility &amp; Dependencies
 

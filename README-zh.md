@@ -23,22 +23,29 @@
 
 WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼梯、台阶、门、栅栏等等，可以自定义原料与产物的配置，插件依赖CraftEngine
 
-<p align="center">
-  <img src="img/1.png" alt="锯木台在游戏中的图片" width="220">
-</p>
+## 功能
+
+<table>
+  <tr>
+    <td align="center" valign="top" width="240">
+      <img src="img/1.png" alt="锯木台在游戏中的图片" width="220">
+    </td>
+    <td valign="top">
+      <ul>
+        <li>两套规则：通过本插件模型“伐木台”的转化规则；通过向CE注入的原版切石机配方</li>
+        <li>空手左键：打开原版切石机界面，把木板切割成楼梯、台阶、门、栅栏、告示牌、碗、箱子、船等木制品。</li>
+        <li>手持物品右键“伐木台”可单个切割，蹲下右键切割手持所有。转化规则与比例见 <code>transformations.yml</code>，可自定义。</li>
+        <li>自动上传资源包至 CraftEngine 资源包，人工执行 <code>/ce reload all</code> 以应用。</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## 功能演示
 
 <p align="center">
   <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
 </p>
-
-## 功能
-
-- 两套规则：通过本插件模型“伐木台”的转化规则；通过向CE注入的原版切石机配方
-- 空手左键：打开原版切石机界面，把木板切割成楼梯、台阶、门、栅栏、告示牌、碗、箱子、船等木制品。
-- 手持物品右键“伐木台”可单个切割，蹲下右键切割手持所有。转化规则与比例见 `transformations.yml`，可自定义。
-- 自动上传资源包至 CraftEngine 资源包，人工执行 `/ce reload all` 以应用。
 
 ## 兼容与依赖
 
