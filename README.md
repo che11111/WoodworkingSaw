@@ -26,7 +26,7 @@ WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, d
 ## Demo
 
 <p align="center">
-  <img src="img/202610300103305.gif" alt="LiteSignInBedrock demo" width="800">
+  <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
 </p>
 
 ## Features

@@ -26,7 +26,7 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 ## 功能演示
 
 <p align="center">
-  <img src="img/202610300103305.gif" alt="LiteSignInBedrock demo" width="800">
+  <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
 </p>
 
 ## 功能
