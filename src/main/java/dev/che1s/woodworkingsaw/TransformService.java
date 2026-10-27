@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,16 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
 final class TransformService {
     private static final long DUPLICATE_WINDOW_NANOS = 120_000_000L;
 
-    private static final class Rule {
-        final Material target;
-        final int inputAmount;
-        final int outputAmount;
-
-        Rule(Material target, int inputAmount, int outputAmount) {
-            this.target = target;
-            this.inputAmount = inputAmount;
-            this.outputAmount = outputAmount;
-        }
+    record Rule(Material source, Material target, int inputAmount, int outputAmount) {
     }
 
     private final WoodworkingSawPlugin plugin;
@@ -56,7 +48,7 @@ final class TransformService {
         return new File(plugin.getDataFolder(), "transformations.yml");
     }
 
-    private Map<Material, Rule> buildTransformMap(List<?> rules) {
+    static Map<Material, Rule> buildTransformMap(List<?> rules) {
         if (rules == null) {
             return Map.of();
         }
@@ -72,9 +64,13 @@ final class TransformService {
             }
             int inputAmount = parseAmount(String.valueOf(map.get("input-amount")), 1);
             int outputAmount = parseAmount(String.valueOf(map.get("output-amount")), 1);
-            result.putIfAbsent(source, new Rule(target, inputAmount, outputAmount));
+            result.putIfAbsent(source, new Rule(source, target, inputAmount, outputAmount));
         }
-        return Map.copyOf(result);
+        return Collections.unmodifiableMap(result);
+    }
+
+    List<Rule> effectiveRules() {
+        return List.copyOf(this.transformations.values());
     }
 
     static int parseAmount(String configuredValue, int fallback) {

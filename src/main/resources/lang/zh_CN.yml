@@ -28,4 +28,7 @@ logs:
   resource-diff: '检测到 CraftEngine 资源与备份不一致：{files}。请同步修改并执行 /ce reload all 应用。'
   resource-up-to-date: 'CraftEngine 锯木台资源已是最新版本。'
   init-failed: '初始化 CraftEngine 锯木台失败：{error}'
+  cer-api-connected: '已向 CraftEngineRecipe API 发布 {count} 条锯木台转化配方。'
+  cer-api-unavailable: '检测到 CraftEngineRecipe，但配方 API 服务尚未就绪。'
+  cer-api-failed: '向 CraftEngineRecipe API 发布转化配方失败：{error}'
   metrics-failed: 'bStats 初始化失败，不影响插件功能：{error}'

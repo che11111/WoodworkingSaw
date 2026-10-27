@@ -17,6 +17,7 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
     private LanguageManager language;
     private TransformService transformService;
     private CraftEngineBridge craftEngine;
+    private CerRecipePublisher cerRecipes;
     private MetricsService metrics;
     private Path importedPackPath;
 
@@ -28,6 +29,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
         language.saveDefaults();
         language.load(getConfig().getString("language", "zh_CN"));
         this.transformService = new TransformService(this, language);
+        this.cerRecipes = new CerRecipePublisher(this);
+        Bukkit.getPluginManager().registerEvents(this.cerRecipes, this);
+        this.cerRecipes.publish(this.transformService.effectiveRules());
         this.metrics = new MetricsService(this);
         metrics.reload();
         initialiseCraftEngine();
@@ -41,6 +45,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        if (cerRecipes != null) {
+            cerRecipes.shutdown();
+        }
         if (metrics != null) {
             metrics.shutdown();
         }
@@ -73,6 +80,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
         reloadConfig();
         language.load(getConfig().getString("language", "zh_CN"));
         transformService.reloadSettings();
+        if (cerRecipes != null) {
+            cerRecipes.publish(transformService.effectiveRules());
+        }
         metrics.reload();
         if (!getConfig().getBoolean("craftengine.auto-install", true)) {
             return;

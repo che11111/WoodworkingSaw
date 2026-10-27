@@ -23,6 +23,10 @@
 
 WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼梯、台阶、门、栅栏等等，可以自定义原料与产物的配置，插件依赖CraftEngine
 
+<p align="center">
+  <img src="img/1.png" alt="锯木台在游戏中的图片" width="220">
+</p>
+
 ## 功能演示
 
 <p align="center">
@@ -59,11 +63,32 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 橡木木板 橡木原木 橡木木板
 铁块 铁块 铁块
 ```
+（当然你也可以修改合成`锯木台`的配方）
+
+<p align="center">
+  <img src="img/2.png" alt="锯木台的合成配方" width="300">
+</p>
 
 2. 空手左键点击`锯木台`的配方：见`plugins/CraftEngine/resources/WoodworkingSaw/configuration/recipes/saw_table_cutting.yml`。
 （木板 → 楼梯 / 台阶 / 门 / 栅栏 / 栅栏门 / 按钮 / 压力板 / 活板门 / 告示牌 / 碗 / 箱子 / 船）
 
-3. 手持物品右键点击`锯木台`的配方：见 `transformations.yml`，可自定义（例如：原木去皮、木板 → 楼梯、床 → 羊毛 → 地毯 → 线、树苗 → 木棍等等）。
+<p align="center">
+  <img src="img/3.png" alt="空手左键打开的切割界面" width="300">
+</p>
+
+3. 手持物品右键点击`锯木台`的配方：见 `transformations.yml`，可自定义。
+目前内置配置为：
+```
+# ┌─ 目前内置的转化链（1:1）────────────────────────────┐
+# │ 原木/菌柄 → 去皮木/去皮菌柄 → 栅栏 → 栅栏门 → 按钮     │
+# │ 木板 → 楼梯 → 半砖 → 压力板 → 按钮                   │
+# │ 门 → 活板门 → 按钮                                 │
+# │ 树苗 → 木棍；                                      │
+# │ 花丛 → 小花；大型垂滴叶 → 小型垂滴叶                  │
+# │ 珊瑚块 → 珊瑚；蜘蛛网 → 蜘蛛丝                       │
+# │ 床 → 羊毛 → 地毯 → 线                              │
+# └──────────────────────────────────────────────────┘
+```
 
 ## 命令与权限
 
@@ -73,7 +98,7 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 | `/sawtable status` | 查看状态 | `woodworkingsaw.admin` |
 | `/sawtable reload` | 重载配置与资源 | `woodworkingsaw.admin` |
 
-别名：`/sawmill`、`/jumutai`、`/woodworking`。使用锯木台需要 `woodworkingsaw.use`（默认所有人）。
+别名：`/woodworking`。使用锯木台需要 `woodworkingsaw.use`（默认所有人）。
 
 ## 配置
 

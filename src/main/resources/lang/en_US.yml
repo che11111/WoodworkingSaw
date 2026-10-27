@@ -28,4 +28,7 @@ logs:
   resource-diff: 'CraftEngine resources differ from the backup: {files}. Sync your changes and run /ce reload all to apply.'
   resource-up-to-date: 'CraftEngine saw table resources are up to date.'
   init-failed: 'Failed to initialize the CraftEngine saw table: {error}'
+  cer-api-connected: 'Published {count} saw-table transformation recipes to the CraftEngineRecipe API.'
+  cer-api-unavailable: 'CraftEngineRecipe is installed, but its recipe API service is not available yet.'
+  cer-api-failed: 'Could not publish saw-table transformations to the CraftEngineRecipe API: {error}'
   metrics-failed: 'Could not initialize bStats; the plugin is unaffected: {error}'

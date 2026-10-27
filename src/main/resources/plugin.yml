@@ -5,13 +5,14 @@ api-version: '${mc.api.version}'
 author: che1s
 description: 锯木台：左键打开切割界面，右键转化手中物品（潜行转化整组），依赖 CraftEngine
 depend: [ CraftEngine ]
+softdepend: [ CraftEngineRecipe ]
 folia-supported: true
 
 commands:
   sawtable:
     description: 获取或管理锯木台
     usage: /sawtable [give|status|reload]
-    aliases: [ sawmill, jumutai, woodworking ]
+    aliases: [ woodworking ]
 
 permissions:
   woodworkingsaw.use:

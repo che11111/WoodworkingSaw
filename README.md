@@ -23,6 +23,10 @@
 
 WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, doors, fences and more, with fully customizable input/output recipes. Requires CraftEngine.
 
+<p align="center">
+  <img src="img/1.png" alt="WoodworkingSaw in game" width="220">
+</p>
+
 ## Demo
 
 <p align="center">
@@ -59,10 +63,29 @@ WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, d
 Oak Planks  Oak Log  Oak Planks
 Iron Block  Iron Block  Iron Block
 ```
+(You can of course modify the saw table crafting recipe.)
+
+<p align="center">
+  <img src="img/2.png" alt="Saw table crafting recipe" width="300">
+</p>
 
 2. Left-click the saw table with an empty hand (recipes in `plugins/CraftEngine/resources/WoodworkingSaw/configuration/recipes/saw_table_cutting.yml`): planks → stairs / slabs / doors / fences / fence gates / buttons / pressure plates / trapdoors / signs / bowls / chests / boats.
 
-3. Right-click the saw table while holding an item (see `transformations.yml`, customizable): e.g. log → stripped log, planks → stairs, bed → wool → carpet → string, sapling → stick.
+<p align="center">
+  <img src="img/3.png" alt="Stonecutter cutting GUI" width="300">
+</p>
+
+3. Right-click the saw table while holding an item: see `transformations.yml`, fully customizable. The built-in transformation chains (1:1) are:
+
+```text
+Log / Stem → Stripped Log / Stripped Stem → Fence → Fence Gate → Button
+Planks → Stairs → Slab → Pressure Plate → Button
+Door → Trapdoor → Button
+Sapling → Stick
+Tall Flower → Small Flower; Big Dripleaf → Small Dripleaf
+Coral Block → Coral; Cobweb → String
+Bed → Wool → Carpet → String
+```
 
 ## Commands &amp; Permissions
 
@@ -72,7 +95,7 @@ Iron Block  Iron Block  Iron Block
 | `/sawtable status` | View status | `woodworkingsaw.admin` |
 | `/sawtable reload` | Reload config and resources | `woodworkingsaw.admin` |
 
-Aliases: `/sawmill`, `/jumutai`, `/woodworking`. Using the saw table requires `woodworkingsaw.use` (default: everyone).
+Aliases: `/woodworking`. Using the saw table requires `woodworkingsaw.use` (default: everyone).
 
 ## Configuration
 
