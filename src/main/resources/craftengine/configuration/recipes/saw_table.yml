@@ -4,17 +4,11 @@ recipes:
     category: misc
     group: woodworkingsaw
     pattern:
-      - " B "
-      - "DEF"
-      - "GHI"
+      - " X "
+      - "LLL"
     ingredients:
-      B: minecraft:stonecutter
-      D: minecraft:oak_planks
-      E: minecraft:oak_log
-      F: minecraft:oak_planks
-      G: minecraft:iron_block
-      H: minecraft:iron_block
-      I: minecraft:iron_block
+      X: minecraft:iron_ingot
+      L: '#minecraft:logs'
     result:
       id: woodworkingsaw:saw_table
       count: 1

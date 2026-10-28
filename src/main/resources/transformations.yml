@@ -9,14 +9,16 @@
 # 同一输入有多条规则时，按顺序取第一条。
 # When one input has multiple rules, the first match wins.
 #
-# ┌─ 目前内置的转化链（1:1）────────────────────────────┐
+# ┌─ 目前内置的转化链──────────────────────────────────┐
 # │ 原木/菌柄 → 去皮木/去皮菌柄 → 栅栏 → 栅栏门 → 按钮     │
 # │ 木板 → 楼梯 → 半砖 → 压力板 → 按钮                   │
 # │ 门 → 活板门 → 按钮                                 │
 # │ 树苗 → 木棍；                                      │
 # │ 花丛 → 小花；大型垂滴叶 → 小型垂滴叶                  │
 # │ 珊瑚块 → 珊瑚；蜘蛛网 → 蜘蛛丝                       │
-# │ 床 → 羊毛 → 地毯 → 线                              │
+# │ 硫黄 → 硫黄尖锥；滴水石块 → 滴水石锥；岩浆块 → 2 岩浆膏 │
+# │ 床 → 羊毛 → [26.3+: 楼梯 → 台阶 → 坐垫] → 地毯 → 线  │
+# │ 旧版本自动回退为：羊毛 → 地毯 → 线                    │
 # └──────────────────────────────────────────────────┘
 rules:
     # 橡木原木 → 去皮橡木原木
@@ -728,6 +730,23 @@ rules:
       input-amount: 1
       output-amount: 1
 
+  # ==== 矿物切割 ====
+    # 硫黄 → 硫黄尖锥
+    - input: minecraft:sulfur
+      output: minecraft:sulfur_spike
+      input-amount: 1
+      output-amount: 1
+    # 滴水石块 → 滴水石锥
+    - input: minecraft:dripstone_block
+      output: minecraft:pointed_dripstone
+      input-amount: 1
+      output-amount: 1
+    # 岩浆块 → 2 个岩浆膏
+    - input: minecraft:magma_block
+      output: minecraft:magma_cream
+      input-amount: 1
+      output-amount: 2
+
   # ==== 床 → 羊毛 → 地毯 → 线 ====
     # 白色床 → 白色羊毛
     - input: minecraft:white_bed
@@ -809,6 +828,80 @@ rules:
       output: minecraft:black_wool
       input-amount: 1
       output-amount: 1
+
+  # ==== 26.3+ 羊毛 → 楼梯 → 台阶 → 坐垫 → 地毯 ====
+  # 旧版本缺少目标物品时会跳过这些规则，并继续使用后面的羊毛 → 地毯。
+  # Older servers skip unavailable targets and fall through to wool -> carpet below.
+    - {input: 'minecraft:white_wool', output: 'minecraft:white_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:orange_wool', output: 'minecraft:orange_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:magenta_wool', output: 'minecraft:magenta_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_blue_wool', output: 'minecraft:light_blue_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:yellow_wool', output: 'minecraft:yellow_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:lime_wool', output: 'minecraft:lime_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:pink_wool', output: 'minecraft:pink_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:gray_wool', output: 'minecraft:gray_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_gray_wool', output: 'minecraft:light_gray_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:cyan_wool', output: 'minecraft:cyan_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:purple_wool', output: 'minecraft:purple_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:blue_wool', output: 'minecraft:blue_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:brown_wool', output: 'minecraft:brown_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:green_wool', output: 'minecraft:green_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:red_wool', output: 'minecraft:red_wool_stairs', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:black_wool', output: 'minecraft:black_wool_stairs', input-amount: 1, output-amount: 1}
+
+    - {input: 'minecraft:white_wool_stairs', output: 'minecraft:white_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:orange_wool_stairs', output: 'minecraft:orange_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:magenta_wool_stairs', output: 'minecraft:magenta_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_blue_wool_stairs', output: 'minecraft:light_blue_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:yellow_wool_stairs', output: 'minecraft:yellow_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:lime_wool_stairs', output: 'minecraft:lime_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:pink_wool_stairs', output: 'minecraft:pink_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:gray_wool_stairs', output: 'minecraft:gray_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_gray_wool_stairs', output: 'minecraft:light_gray_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:cyan_wool_stairs', output: 'minecraft:cyan_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:purple_wool_stairs', output: 'minecraft:purple_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:blue_wool_stairs', output: 'minecraft:blue_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:brown_wool_stairs', output: 'minecraft:brown_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:green_wool_stairs', output: 'minecraft:green_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:red_wool_stairs', output: 'minecraft:red_wool_slab', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:black_wool_stairs', output: 'minecraft:black_wool_slab', input-amount: 1, output-amount: 1}
+
+    - {input: 'minecraft:white_wool_slab', output: 'minecraft:white_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:orange_wool_slab', output: 'minecraft:orange_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:magenta_wool_slab', output: 'minecraft:magenta_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_blue_wool_slab', output: 'minecraft:light_blue_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:yellow_wool_slab', output: 'minecraft:yellow_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:lime_wool_slab', output: 'minecraft:lime_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:pink_wool_slab', output: 'minecraft:pink_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:gray_wool_slab', output: 'minecraft:gray_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_gray_wool_slab', output: 'minecraft:light_gray_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:cyan_wool_slab', output: 'minecraft:cyan_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:purple_wool_slab', output: 'minecraft:purple_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:blue_wool_slab', output: 'minecraft:blue_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:brown_wool_slab', output: 'minecraft:brown_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:green_wool_slab', output: 'minecraft:green_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:red_wool_slab', output: 'minecraft:red_cushion', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:black_wool_slab', output: 'minecraft:black_cushion', input-amount: 1, output-amount: 1}
+
+    - {input: 'minecraft:white_cushion', output: 'minecraft:white_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:orange_cushion', output: 'minecraft:orange_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:magenta_cushion', output: 'minecraft:magenta_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_blue_cushion', output: 'minecraft:light_blue_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:yellow_cushion', output: 'minecraft:yellow_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:lime_cushion', output: 'minecraft:lime_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:pink_cushion', output: 'minecraft:pink_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:gray_cushion', output: 'minecraft:gray_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:light_gray_cushion', output: 'minecraft:light_gray_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:cyan_cushion', output: 'minecraft:cyan_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:purple_cushion', output: 'minecraft:purple_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:blue_cushion', output: 'minecraft:blue_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:brown_cushion', output: 'minecraft:brown_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:green_cushion', output: 'minecraft:green_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:red_cushion', output: 'minecraft:red_carpet', input-amount: 1, output-amount: 1}
+    - {input: 'minecraft:black_cushion', output: 'minecraft:black_carpet', input-amount: 1, output-amount: 1}
+
+    # 26.2、1.21.11 等旧版本使用的回退规则。
+    # Fallback used on 26.2, 1.21.11, and other older servers.
     # 白色羊毛 → 白色地毯
     - input: minecraft:white_wool
       output: minecraft:white_carpet

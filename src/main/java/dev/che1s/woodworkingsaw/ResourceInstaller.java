@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 final class ResourceInstaller {
-    private static final String RESOURCE_VERSION = "1.0.16";
+    private static final String RESOURCE_VERSION = "1.0.17";
     private static final List<String> MANAGED_FILES = List.of(
             "pack.yml",
             "configuration/blocks/saw_table.yml",

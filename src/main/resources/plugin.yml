@@ -11,7 +11,7 @@ folia-supported: true
 commands:
   sawtable:
     description: 获取或管理锯木台
-    usage: /sawtable [give|status|reload]
+    usage: /sawtable [give|status|reload|update]
     aliases: [ woodworking ]
 
 permissions:
@@ -22,5 +22,5 @@ permissions:
     description: 获取锯木台
     default: op
   woodworkingsaw.admin:
-    description: 查看状态并重新导入资源
+    description: 查看状态、重新导入资源并检查更新
     default: op

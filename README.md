@@ -44,7 +44,7 @@ WoodworkingSaw adds a saw table to your server. Cut planks into stairs, slabs, d
 ## Demo
 
 <p align="center">
-  <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
+  <img src="img/202610301123613.gif" alt="WoodworkingSaw demo" width="800">
 </p>
 
 ## Compatibility &amp; Dependencies
@@ -82,7 +82,7 @@ Iron Block  Iron Block  Iron Block
   <img src="img/3.png" alt="Stonecutter cutting GUI" width="300">
 </p>
 
-3. Right-click the saw table while holding an item: see `transformations.yml`, fully customizable. The built-in transformation chains (1:1) are:
+3. Right-click the saw table while holding an item: see `transformations.yml`, fully customizable. The built-in transformation chains are mostly 1:1:
 
 ```text
 Log / Stem → Stripped Log / Stripped Stem → Fence → Fence Gate → Button
@@ -91,7 +91,9 @@ Door → Trapdoor → Button
 Sapling → Stick
 Tall Flower → Small Flower; Big Dripleaf → Small Dripleaf
 Coral Block → Coral; Cobweb → String
-Bed → Wool → Carpet → String
+Sulfur → Sulfur Spike; Dripstone Block → Pointed Dripstone; Magma Block → 2 Magma Cream
+Bed → Wool → [26.3+: Wool Stairs → Wool Slab → Cushion] → Carpet → String
+26.2 and older: Bed → Wool → Carpet → String
 ```
 
 ## Commands &amp; Permissions
@@ -101,17 +103,20 @@ Bed → Wool → Carpet → String
 | `/sawtable give [player] [amount]` | Get a saw table | `woodworkingsaw.give` |
 | `/sawtable status` | View status | `woodworkingsaw.admin` |
 | `/sawtable reload` | Reload config and resources | `woodworkingsaw.admin` |
+| `/sawtable update` | Check the latest stable GitHub release | `woodworkingsaw.admin` |
 
 Aliases: `/woodworking`. Using the saw table requires `woodworkingsaw.use` (default: everyone).
 
 ## Configuration
 
-- `plugins/WoodworkingSaw/config.yml` — language, sneak-to-all, sound, action bar, CraftEngine resources.
+- `plugins/WoodworkingSaw/config.yml` — language, update checking, sneak-to-all, sound, action bar, CraftEngine resources.
 - `plugins/WoodworkingSaw/transformations.yml` — right-click transformation rules (`input`/`output`/`input-amount`/`output-amount`).
 - `plugins/WoodworkingSaw/lang/` — messages (`zh_CN.yml`, `en_US.yml`).
 - `plugins/WoodworkingSaw/resources/` — CraftEngine resource pack backup.
 
 Run `/sawtable reload` after making changes.
+
+Update checks. Set `check-for-updates` to `false` to disable these checks.
 
 ## FAQ
 

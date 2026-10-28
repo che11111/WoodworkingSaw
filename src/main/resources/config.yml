@@ -19,6 +19,10 @@ craftengine:
   auto-install: true
 
 
+# 启动 5 秒后及每 6 小时检查 GitHub 最新正式版，只提示，不自动替换 JAR。
+# Check GitHub stable releases after startup and every 6 hours; notify only.
+check-for-updates: true
+
 # 是否启用 bStats 匿名统计
 # Whether to enable bStats anonymous metrics.
 bstats:

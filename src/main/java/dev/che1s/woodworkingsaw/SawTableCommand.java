@@ -36,6 +36,7 @@ final class SawTableCommand implements CommandExecutor, TabCompleter {
             case "give" -> give(sender, args);
             case "status" -> status(sender);
             case "reload" -> reload(sender);
+            case "update" -> update(sender);
             default -> help(sender, label);
         }
         return true;
@@ -112,17 +113,26 @@ final class SawTableCommand implements CommandExecutor, TabCompleter {
         }
     }
 
+    private void update(CommandSender sender) {
+        if (!sender.hasPermission("woodworkingsaw.admin")) {
+            sender.sendMessage(language.message("messages.no-permission-update"));
+            return;
+        }
+        plugin.updates().request(sender);
+    }
+
     private void help(CommandSender sender, String label) {
         sender.sendMessage(language.message("messages.help-usage"));
         sender.sendMessage(language.message("messages.help-give", "label", label));
         sender.sendMessage(language.message("messages.help-status", "label", label));
         sender.sendMessage(language.message("messages.help-reload", "label", label));
+        sender.sendMessage(language.message("messages.help-update", "label", label));
     }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
-            return filter(Arrays.asList("give", "status", "reload"), args[0]);
+            return filter(Arrays.asList("give", "status", "reload", "update"), args[0]);
         }
         if (args.length == 2 && args[0].equalsIgnoreCase("give")) {
             return filter(Bukkit.getOnlinePlayers().stream().map(Player::getName).toList(), args[1]);

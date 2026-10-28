@@ -44,7 +44,7 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 ## 功能演示
 
 <p align="center">
-  <img src="img/202610300103306.gif" alt="WoodworkingSaw demo" width="800">
+  <img src="img/202610301123613.gif" alt="WoodworkingSaw demo" width="800">
 </p>
 
 ## 兼容与依赖
@@ -86,14 +86,16 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 3. 手持物品右键点击`锯木台`的配方：见 `transformations.yml`，可自定义。
 目前内置配置为：
 ```
-# ┌─ 目前内置的转化链（1:1）────────────────────────────┐
+# ┌─ 目前内置的转化链 ──────────────────────────────────┐
 # │ 原木/菌柄 → 去皮木/去皮菌柄 → 栅栏 → 栅栏门 → 按钮     │
 # │ 木板 → 楼梯 → 半砖 → 压力板 → 按钮                   │
 # │ 门 → 活板门 → 按钮                                 │
 # │ 树苗 → 木棍；                                      │
 # │ 花丛 → 小花；大型垂滴叶 → 小型垂滴叶                  │
 # │ 珊瑚块 → 珊瑚；蜘蛛网 → 蜘蛛丝                       │
-# │ 床 → 羊毛 → 地毯 → 线                              │
+# │ 硫黄 → 硫黄尖锥；滴水石块 → 滴水石锥；岩浆块 → 2 岩浆膏 │
+# │ 床 → 羊毛 → [26.3+: 楼梯 → 台阶 → 坐垫] → 地毯 → 线  │
+# │ 26.2 及更早版本：床 → 羊毛 → 地毯 → 线               │
 # └──────────────────────────────────────────────────┘
 ```
 
@@ -104,17 +106,20 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 | `/sawtable give [玩家] [数量]` | 获取锯木台 | `woodworkingsaw.give` |
 | `/sawtable status` | 查看状态 | `woodworkingsaw.admin` |
 | `/sawtable reload` | 重载配置与资源 | `woodworkingsaw.admin` |
+| `/sawtable update` | 检查更新 | `woodworkingsaw.admin` |
 
 别名：`/woodworking`。使用锯木台需要 `woodworkingsaw.use`（默认所有人）。
 
 ## 配置
 
-- `plugins/WoodworkingSaw/config.yml` — 语言、潜行整组、音效、动作栏、CraftEngine 资源。
+- `plugins/WoodworkingSaw/config.yml` — 语言、更新检查、潜行整组、音效、动作栏、CraftEngine 资源。
 - `plugins/WoodworkingSaw/transformations.yml` — 右键转化规则（`input`/`output`/`input-amount`/`output-amount`）。
 - `plugins/WoodworkingSaw/lang/` — 文案（`zh_CN.yml`、`en_US.yml`）。
 - `plugins/WoodworkingSaw/resources/` — CraftEngine 资源包备份。
 
 修改后执行 `/sawtable reload`。
+
+更新检查：`check-for-updates` 设为 `false` 可关闭。
 
 ## 常见问题
 

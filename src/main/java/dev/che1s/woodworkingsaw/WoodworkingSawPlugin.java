@@ -2,6 +2,7 @@ package dev.che1s.woodworkingsaw;
 
 import dev.che1s.woodworkingsaw.i18n.LanguageManager;
 import dev.che1s.woodworkingsaw.metrics.MetricsService;
+import dev.che1s.woodworkingsaw.update.UpdateChecker;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,6 +20,7 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
     private CraftEngineBridge craftEngine;
     private CerRecipePublisher cerRecipes;
     private MetricsService metrics;
+    private UpdateChecker updates;
     private Path importedPackPath;
 
     @Override
@@ -34,6 +36,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
         this.cerRecipes.publish(this.transformService.effectiveRules());
         this.metrics = new MetricsService(this);
         metrics.reload();
+        this.updates = new UpdateChecker(this);
+        Bukkit.getPluginManager().registerEvents(this.updates, this);
+        updates.reload();
         initialiseCraftEngine();
         SawTableCommand command = new SawTableCommand(this, transformService, language);
         if (getCommand("sawtable") != null) {
@@ -45,6 +50,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        if (updates != null) {
+            updates.shutdown();
+        }
         if (cerRecipes != null) {
             cerRecipes.shutdown();
         }
@@ -84,6 +92,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
             cerRecipes.publish(transformService.effectiveRules());
         }
         metrics.reload();
+        if (updates != null) {
+            updates.reload();
+        }
         if (!getConfig().getBoolean("craftengine.auto-install", true)) {
             return;
         }
@@ -128,5 +139,9 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
 
     public LanguageManager language() {
         return language;
+    }
+
+    UpdateChecker updates() {
+        return updates;
     }
 }
