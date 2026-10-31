@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/woodworking_table_render.png" alt="WoodworkingSaw Logo" width="128">
+  <img src="img/WoodworkingSaw_transparent_1x1.gif" alt="WoodworkingSaw Logo" width="128">
 </p>
 
 <h1 align="center">锯木台 WoodworkingSaw</h1>

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/che11111/WoodworkingSaw/main/img/woodworking_table_render.png" alt="WoodworkingSaw Logo" width="128">
+  <img src="https://raw.githubusercontent.com/che11111/WoodworkingSaw/main/img/WoodworkingSaw_transparent_1x1.gif" alt="WoodworkingSaw Logo" width="128">
 </p>
 
 <h1 align="center">WoodworkingSaw</h1>
