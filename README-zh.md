@@ -119,7 +119,7 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 
 修改后执行 `/sawtable reload`。
 
-更新检查：`check-for-updates` 设为 `false` 可关闭。
+更新检查：仅在插件启动或 `/sawtable reload` 时检查一次 GitHub 最新正式版。发现新版本时只在控制台提醒，不通知管理员，也不会自动替换 JAR。`check-for-updates` 设为 `false` 可关闭自动检查；`/sawtable update` 仍可手动查询。
 
 ## 常见问题
 
@@ -129,6 +129,15 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 | 右键不转化 | 检查 `transformations.yml` 是否有该物品的规则 |
 | 无法获取锯木台 | 执行 `/ce reload all` 后再 `/sawtable give` |
 | 无法使用 | 检查 `woodworkingsaw.use` 权限 |
+
+## 赞助与支持
+
+如果本项目对你有帮助，可以通过 Ko-fi 或 爱发电 赞助开发。赞助后可提供插件安装、配置和故障排查问答服务。
+
+<p align="center">
+  <a href='https://ko-fi.com/J5C529ZWWL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  <a href='https://afdian.com/a/sss000' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://img.shields.io/badge/Afdian-Support-946CE6?style=for-the-badge&logo=afdian&logoColor=white' border='0' alt='在爱发电赞助' /></a>
+</p>
 
 ## 许可证
 

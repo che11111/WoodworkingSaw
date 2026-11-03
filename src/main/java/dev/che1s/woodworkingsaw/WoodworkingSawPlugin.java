@@ -37,7 +37,6 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
         this.metrics = new MetricsService(this);
         metrics.reload();
         this.updates = new UpdateChecker(this);
-        Bukkit.getPluginManager().registerEvents(this.updates, this);
         updates.reload();
         initialiseCraftEngine();
         SawTableCommand command = new SawTableCommand(this, transformService, language);

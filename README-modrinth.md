@@ -108,7 +108,7 @@ Aliases: `/woodworking`. Using the saw table requires `woodworkingsaw.use` (defa
 
 Run `/sawtable reload` after making changes.
 
-Update checks. Set `check-for-updates` to `false` to disable these checks.
+Update checks run once on startup or `/sawtable reload`. A newer stable release is logged to the console only; administrators are not notified, and the JAR is never replaced automatically. Set `check-for-updates` to `false` to disable automatic checks; `/sawtable update` still allows a manual check.
 
 ## FAQ
 
@@ -118,6 +118,15 @@ Update checks. Set `check-for-updates` to `false` to disable these checks.
 | Right-click doesn't transform | Check whether `transformations.yml` has a rule for the item |
 | Can't get a saw table | Run `/ce reload all`, then `/sawtable give` |
 | Can't use it | Check the `woodworkingsaw.use` permission |
+
+## Sponsorship and Support
+
+If this project helps you, you can support development through Ko-fi or Afdian. Sponsors can request plugin installation, configuration, and troubleshooting.
+
+<p align="center">
+  <a href='https://ko-fi.com/J5C529ZWWL' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  <a href='https://afdian.com/a/sss000' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://img.shields.io/badge/Afdian-Support-946CE6?style=for-the-badge&logo=afdian&logoColor=white' border='0' alt='Support on Afdian' /></a>
+</p>
 
 ## License
 

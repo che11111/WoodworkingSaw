@@ -19,8 +19,8 @@ craftengine:
   auto-install: true
 
 
-# 启动 5 秒后及每 6 小时检查 GitHub 最新正式版，只提示，不自动替换 JAR。
-# Check GitHub stable releases after startup and every 6 hours; notify only.
+# 仅在启动或重载 5 秒后检查一次 GitHub 最新正式版，只在控制台提醒；不通知管理员，不自动替换 JAR。
+# Check GitHub stable releases once, 5 seconds after startup or reload. Log to console only; do not notify administrators or replace the JAR automatically.
 check-for-updates: true
 
 # 是否启用 bStats 匿名统计
