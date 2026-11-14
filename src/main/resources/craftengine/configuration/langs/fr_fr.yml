@@ -1,0 +1,7 @@
+lang#items:
+  fr_fr:
+    item.woodworkingsaw.saw_table: Table de sciage
+
+translations#categories:
+  fr_fr:
+    category.woodworkingsaw.items: Tables de sciage

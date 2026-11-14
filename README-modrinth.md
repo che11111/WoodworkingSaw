@@ -101,9 +101,9 @@ Aliases: `/woodworking`. Using the saw table requires `woodworkingsaw.use` (defa
 
 ## Configuration
 
-- `plugins/WoodworkingSaw/config.yml` — language, update checking, sneak-to-all, sound, action bar, CraftEngine resources.
+- `plugins/WoodworkingSaw/config.yml` — language, update checking, sneak-to-all, sound, action bar, CraftEngine resources. Use `language: auto` for server Locale detection or a file name such as `zh_cn.yml`.
 - `plugins/WoodworkingSaw/transformations.yml` — right-click transformation rules (`input`/`output`/`input-amount`/`output-amount`).
-- `plugins/WoodworkingSaw/lang/` — messages (`zh_CN.yml`, `en_US.yml`).
+- `plugins/WoodworkingSaw/lang/` — messages in English, Simplified Chinese, Japanese, Korean, Traditional Chinese, German, French, Spanish, and Russian. Unknown automatic locales fall back to `en_us.yml`.
 - `plugins/WoodworkingSaw/resources/` — CraftEngine resource pack backup.
 
 Run `/sawtable reload` after making changes.

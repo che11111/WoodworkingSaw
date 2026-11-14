@@ -29,7 +29,7 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
         saveResource("transformations.yml", false);
         this.language = new LanguageManager(this);
         language.saveDefaults();
-        language.load(getConfig().getString("language", "zh_CN"));
+        language.load(getConfig().getString("language", "auto"));
         this.transformService = new TransformService(this, language);
         this.cerRecipes = new CerRecipePublisher(this);
         Bukkit.getPluginManager().registerEvents(this.cerRecipes, this);
@@ -85,7 +85,7 @@ public final class WoodworkingSawPlugin extends JavaPlugin {
 
     void reloadEverything() throws IOException, ReflectiveOperationException {
         reloadConfig();
-        language.load(getConfig().getString("language", "zh_CN"));
+        language.load(getConfig().getString("language", "auto"));
         transformService.reloadSettings();
         if (cerRecipes != null) {
             cerRecipes.publish(transformService.effectiveRules());

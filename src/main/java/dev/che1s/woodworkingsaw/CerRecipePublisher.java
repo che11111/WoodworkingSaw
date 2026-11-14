@@ -128,7 +128,17 @@ final class CerRecipePublisher implements Listener {
     private List<Object> recipes(List<TransformService.Rule> rules) throws ReflectiveOperationException {
         List<Object> recipes = new ArrayList<>(rules.size());
         Object station = this.apiItem(WORKSTATION_ID,
-                localized("<gold>锯木台</gold>", "<gold>Saw Table</gold>"), List.of(), 1);
+                localized(
+                        "<gold>Saw Table</gold>",
+                        "<gold>锯木台</gold>",
+                        "<gold>木工台</gold>",
+                        "<gold>목공 작업대</gold>",
+                        "<gold>鋸木台</gold>",
+                        "<gold>Sägetisch</gold>",
+                        "<gold>Table de sciage</gold>",
+                        "<gold>Mesa de aserrado</gold>",
+                        "<gold>Столярный верстак</gold>"
+                ), List.of(), 1);
         for (TransformService.Rule rule : rules) {
             Object ingredient = this.apiItem(rule.source().getKey().toString(), null, List.of(),
                     rule.inputAmount());
@@ -144,15 +154,50 @@ final class CerRecipePublisher implements Listener {
     }
 
     private Object note(TransformService.Rule rule) throws ReflectiveOperationException {
-        Map<String, String> name = localized("锯木台转化", "Saw Table conversion");
+        Map<String, String> name = localized(
+                "Saw Table conversion",
+                "锯木台转化",
+                "木工台加工",
+                "목공 작업대 가공",
+                "鋸木台轉換",
+                "Verarbeitung am Sägetisch",
+                "Transformation à la table de sciage",
+                "Transformación en mesa de aserrado",
+                "Обработка на столярном верстаке"
+        );
         Map<String, String> lore = new LinkedHashMap<>();
-        lore.put("zh_CN", "<gray>手持物品右键伐木台</gray>");
         lore.put("en_US", "<gray>Right-click the saw table while holding an item.</gray>");
+        lore.put("zh_CN", "<gray>手持物品右键锯木台</gray>");
+        lore.put("ja_JP", "<gray>アイテムを持って木工台を右クリックします。</gray>");
+        lore.put("ko_KR", "<gray>아이템을 들고 목공 작업대를 우클릭하세요.</gray>");
+        lore.put("zh_TW", "<gray>手持物品右鍵鋸木台</gray>");
+        lore.put("de_DE", "<gray>Rechtsklick auf den Sägetisch mit einem Gegenstand in der Hand.</gray>");
+        lore.put("fr_FR", "<gray>Clic droit sur la table de sciage en tenant un objet.</gray>");
+        lore.put("es_ES", "<gray>Haz clic derecho en la mesa de aserrado con un objeto en la mano.</gray>");
+        lore.put("ru_RU", "<gray>Щёлкните правой кнопкой по столярному верстаку с предметом в руке.</gray>");
         Map<String, String> amount = new LinkedHashMap<>();
+        String english = "<gray>Consumes <white>" + rule.inputAmount()
+                + "</white> and produces <white>" + rule.outputAmount()
+                + "</white> per conversion.</gray>";
+        amount.put("en_US", english);
         amount.put("zh_CN", "<gray>每次消耗 <white>" + rule.inputAmount()
                 + "</white>，产出 <white>" + rule.outputAmount() + "</white>。</gray>");
-        amount.put("en_US", "<gray>Consumes <white>" + rule.inputAmount()
-                + "</white> and produces <white>" + rule.outputAmount() + "</white> per conversion.</gray>");
+        amount.put("ja_JP", "<gray>1 回につき <white>" + rule.inputAmount()
+                + "</white> 個を消費し、<white>" + rule.outputAmount() + "</white> 個を生産します。</gray>");
+        amount.put("ko_KR", "<gray>가공할 때마다 <white>" + rule.inputAmount()
+                + "</white>개를 소비하고 <white>" + rule.outputAmount() + "</white>개를 생산합니다.</gray>");
+        amount.put("zh_TW", "<gray>每次消耗 <white>" + rule.inputAmount()
+                + "</white>，產出 <white>" + rule.outputAmount() + "</white>。</gray>");
+        amount.put("de_DE", "<gray>Verbraucht pro Verarbeitung <white>" + rule.inputAmount()
+                + "</white> und erzeugt <white>" + rule.outputAmount() + "</white>.</gray>");
+        amount.put("fr_FR", "<gray>Consomme <white>" + rule.inputAmount()
+                + "</white> et produit <white>" + rule.outputAmount()
+                + "</white> par transformation.</gray>");
+        amount.put("es_ES", "<gray>Consume <white>" + rule.inputAmount()
+                + "</white> y produce <white>" + rule.outputAmount()
+                + "</white> por transformación.</gray>");
+        amount.put("ru_RU", "<gray>За одну обработку расходуется <white>" + rule.inputAmount()
+                + "</white>, создаётся <white>" + rule.outputAmount() + "</white>.</gray>");
         return this.construct("ApiNote",
                 new Class<?>[]{this.apiClass("LocalizedText"), List.class},
                 this.localizedText(name), List.of(this.localizedText(lore), this.localizedText(amount)));
@@ -192,10 +237,26 @@ final class CerRecipePublisher implements Listener {
         return "transform/" + material.getKey().getNamespace() + "/" + material.getKey().getKey();
     }
 
-    private static Map<String, String> localized(String chinese, String english) {
+    private static Map<String, String> localized(
+            String english,
+            String simplifiedChinese,
+            String japanese,
+            String korean,
+            String traditionalChinese,
+            String german,
+            String french,
+            String spanish,
+            String russian) {
         Map<String, String> values = new LinkedHashMap<>();
-        values.put("zh_CN", chinese);
         values.put("en_US", english);
+        values.put("zh_CN", simplifiedChinese);
+        values.put("ja_JP", japanese);
+        values.put("ko_KR", korean);
+        values.put("zh_TW", traditionalChinese);
+        values.put("de_DE", german);
+        values.put("fr_FR", french);
+        values.put("es_ES", spanish);
+        values.put("ru_RU", russian);
         return values;
     }
 }

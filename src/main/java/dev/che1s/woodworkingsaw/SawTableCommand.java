@@ -109,7 +109,9 @@ final class SawTableCommand implements CommandExecutor, TabCompleter {
             sender.sendMessage(language.message("messages.reload-success"));
         } catch (Exception exception) {
             sender.sendMessage(language.message("messages.reload-failed", "error", exception.getMessage()));
-            plugin.getLogger().warning("Reload failed: " + exception.getMessage());
+            plugin.getLogger().warning(language.text(
+                    "logs.reload-failed",
+                    "error", String.valueOf(exception.getMessage())));
         }
     }
 

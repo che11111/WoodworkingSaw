@@ -108,7 +108,7 @@ final class CraftEngineBridge implements Listener {
                 plugin,
                 true
         );
-        plugin.getLogger().info("已连接 CraftEngine 自定义方块事件。");
+        plugin.getLogger().info(plugin.language().text("logs.craftengine-connected"));
     }
 
     private void handleInteraction(Event event, TransformService transformService) {
@@ -153,7 +153,9 @@ final class CraftEngineBridge implements Listener {
                 eventCancelMethod.invoke(event, true);
             }
         } catch (ReflectiveOperationException exception) {
-            plugin.getLogger().warning("处理 CraftEngine 锯木台交互失败：" + exception.getMessage());
+            plugin.getLogger().warning(plugin.language().text(
+                    "logs.interaction-failed",
+                    "error", String.valueOf(exception.getMessage())));
         }
     }
 
@@ -186,7 +188,9 @@ final class CraftEngineBridge implements Listener {
             Object stack = buildItemMethod.invoke(definition);
             return stack instanceof ItemStack item ? item : null;
         } catch (ReflectiveOperationException exception) {
-            plugin.getLogger().warning("无法构建 CraftEngine 锯木台物品：" + exception.getMessage());
+            plugin.getLogger().warning(plugin.language().text(
+                    "logs.item-build-failed",
+                    "error", String.valueOf(exception.getMessage())));
             return null;
         }
     }

@@ -6,7 +6,7 @@
 
     <groupId>dev.che1s</groupId>
     <artifactId>woodworking-saw</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <name>WoodworkingSaw</name>

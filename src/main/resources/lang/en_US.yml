@@ -1,4 +1,4 @@
-# English. Editable; missing entries are added on startup or reload.
+# English. Edit this file to customize messages.
 messages:
   prefix: '&#C9B6E4[Saw Table] &#F3EFE7'
   action-bar: '&#F7C5CCCut &#FFFFFF{count} &#F7C5CCitem(s)'
@@ -32,6 +32,10 @@ messages:
 
 logs:
   enabled: 'WoodworkingSaw {version} enabled. Language: {language}.'
+  craftengine-connected: 'Connected to CraftEngine custom block events.'
+  interaction-failed: 'Could not handle a CraftEngine saw table interaction: {error}'
+  item-build-failed: 'Could not build the CraftEngine saw table item: {error}'
+  reload-failed: 'Reload failed: {error}'
   resource-uploaded: 'Saw table resources uploaded to {path}. Run /ce reload all to apply the CraftEngine resources.'
   resource-diff: 'CraftEngine resources differ from the backup: {files}. Sync your changes and run /ce reload all to apply.'
   resource-up-to-date: 'CraftEngine saw table resources are up to date.'

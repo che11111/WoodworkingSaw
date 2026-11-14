@@ -1,0 +1,7 @@
+lang#items:
+  de_de:
+    item.woodworkingsaw.saw_table: Sägetisch
+
+translations#categories:
+  de_de:
+    category.woodworkingsaw.items: Sägetische

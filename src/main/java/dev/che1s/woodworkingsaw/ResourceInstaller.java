@@ -9,15 +9,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 final class ResourceInstaller {
-    private static final String RESOURCE_VERSION = "1.0.17";
+    private static final String RESOURCE_VERSION = "1.0.5";
     private static final List<String> MANAGED_FILES = List.of(
             "pack.yml",
             "configuration/blocks/saw_table.yml",
             "configuration/categories.yml",
             "configuration/recipes/saw_table.yml",
             "configuration/recipes/saw_table_cutting.yml",
-            "configuration/langs/zh_cn.yml",
+            "configuration/langs/de_de.yml",
             "configuration/langs/en_us.yml",
+            "configuration/langs/es_es.yml",
+            "configuration/langs/fr_fr.yml",
+            "configuration/langs/ja_jp.yml",
+            "configuration/langs/ko_kr.yml",
+            "configuration/langs/ru_ru.yml",
+            "configuration/langs/zh_cn.yml",
+            "configuration/langs/zh_tw.yml",
             "resourcepack/assets/woodworkingsaw/models/block/simple_woodworking_table.json",
             "resourcepack/assets/woodworkingsaw/models/item/saw_table.json",
             "resourcepack/assets/woodworkingsaw/textures/block/stonecutter_saw.png",
@@ -76,7 +83,7 @@ final class ResourceInstaller {
     private boolean copyEmbedded(String resourceName, Path target) throws IOException {
         try (InputStream input = plugin.getResource(resourceName)) {
             if (input == null) {
-                throw new IOException("JAR 中缺少资源：" + resourceName);
+                throw new IOException("Missing resource in JAR: " + resourceName);
             }
             Files.createDirectories(target.getParent());
             Path temporary = target.resolveSibling(target.getFileName() + ".tmp");

@@ -1,6 +1,11 @@
-# 语言：zh_CN 或 en_US。可在 lang/ 目录下编辑对应文案。
-# Language: zh_CN or en_US. Edit messages under lang/.
-language: zh_CN
+# 语言：auto，或 lang/ 下的文件名。
+# Language: auto, or a file name under lang/.
+#
+# auto 会识别服务器 Locale；无法识别时使用 en_us.yml。
+# auto detects the server Locale and falls back to en_us.yml when unrecognized.
+# 内置：en_us.yml、zh_cn.yml、ja.yml、ko.yml、zh_tw.yml、de.yml、fr.yml、es.yml、ru.yml
+# Bundled: en_us.yml, zh_cn.yml, ja.yml, ko.yml, zh_tw.yml, de.yml, fr.yml, es.yml, ru.yml
+language: auto
 
 transform:
   # 潜行时右键是否转化手中整组

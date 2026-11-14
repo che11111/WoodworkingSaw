@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -17,12 +18,11 @@ import java.util.regex.Pattern;
 
 /** 从可编辑的语言文件加载插件文案，缺失时回退到内置文案。 */
 public final class LanguageManager {
-    private static final String[] LOCALES = {"zh_CN", "en_US"};
     private static final Pattern ARGUMENT = Pattern.compile("\\{([a-zA-Z0-9_-]+)}");
     private static final Pattern HEX_COLOR = Pattern.compile("&#([0-9a-fA-F]{6})");
 
     private final JavaPlugin plugin;
-    private volatile String locale = "zh_CN";
+    private volatile String locale = LocaleResolver.DEFAULT_LOCALE;
     private volatile Map<String, String> text = Map.of();
 
     public LanguageManager(JavaPlugin plugin) {
@@ -31,16 +31,21 @@ public final class LanguageManager {
 
     public void saveDefaults() {
         File folder = new File(plugin.getDataFolder(), "lang");
-        for (String locale : LOCALES) {
+        if (!folder.exists() && !folder.mkdirs()) {
+            plugin.getLogger().warning("Could not create the language directory.");
+            return;
+        }
+        for (String locale : LocaleResolver.BUNDLED_LOCALES) {
             File file = new File(folder, locale + ".yml");
             if (file.exists()) {
                 continue;
             }
-            try (InputStream stream = plugin.getResource("lang/" + locale + ".yml")) {
+            migrateLegacyFile(folder, locale, file);
+            if (file.exists()) {
+                continue;
+            }
+            try (InputStream stream = plugin.getResource(bundledResource(locale))) {
                 if (stream == null) {
-                    continue;
-                }
-                if (!folder.exists() && !folder.mkdirs()) {
                     continue;
                 }
                 Files.copy(stream, file.toPath());
@@ -50,25 +55,30 @@ public final class LanguageManager {
     }
 
     public void load(String requested) {
-        String target = normalize(requested);
-        if (target == null) {
-            target = "zh_CN";
-        }
-        Map<String, String> merged = new HashMap<>();
-        YamlConfiguration bundled = readResource("lang/" + target + ".yml");
-        for (String key : bundled.getKeys(true)) {
-            if (bundled.isString(key)) {
-                merged.put(key, bundled.getString(key));
+        String target;
+        if (LocaleResolver.isAuto(requested)) {
+            target = LocaleResolver.detectServerLocale(Locale.getDefault(), System.getenv());
+        } else {
+            String known = LocaleResolver.knownLocale(requested);
+            String custom = LocaleResolver.normalize(requested);
+            File customFile = new File(plugin.getDataFolder(), "lang/" + custom + ".yml");
+            if (known != null) {
+                target = known;
+            } else if (LocaleResolver.isSafeCustomName(requested) && customFile.isFile()) {
+                target = custom;
+            } else {
+                plugin.getLogger().warning(
+                        "Unsupported language '" + requested + "', falling back to en_us.yml.");
+                target = LocaleResolver.DEFAULT_LOCALE;
             }
         }
+        Map<String, String> merged = new HashMap<>();
+        mergeResource(merged, LocaleResolver.DEFAULT_LOCALE);
+        mergeResource(merged, target);
         File file = new File(plugin.getDataFolder(), "lang/" + target + ".yml");
         if (file.exists()) {
             YamlConfiguration disk = YamlConfiguration.loadConfiguration(file);
-            for (String key : disk.getKeys(true)) {
-                if (disk.isString(key)) {
-                    merged.put(key, disk.getString(key));
-                }
-            }
+            mergeConfiguration(merged, disk);
         }
         this.locale = target;
         this.text = Map.copyOf(merged);
@@ -123,10 +133,25 @@ public final class LanguageManager {
         return result.toString();
     }
 
+    private void mergeResource(Map<String, String> merged, String locale) {
+        YamlConfiguration bundled = readResource(bundledResource(locale));
+        if (bundled != null) {
+            mergeConfiguration(merged, bundled);
+        }
+    }
+
+    private static void mergeConfiguration(Map<String, String> merged, YamlConfiguration source) {
+        for (String key : source.getKeys(true)) {
+            if (source.isString(key)) {
+                merged.put(key, source.getString(key));
+            }
+        }
+    }
+
     private YamlConfiguration readResource(String name) {
         try (InputStream stream = plugin.getResource(name)) {
             if (stream == null) {
-                throw new IllegalStateException("Missing bundled resource: " + name);
+                return null;
             }
             YamlConfiguration yaml = new YamlConfiguration();
             yaml.load(new InputStreamReader(stream, StandardCharsets.UTF_8));
@@ -136,16 +161,30 @@ public final class LanguageManager {
         }
     }
 
-    private static String normalize(String text) {
-        if (text == null) {
-            return null;
+    private static String bundledResource(String locale) {
+        return switch (locale) {
+            case "en_us" -> "lang/en_US.yml";
+            case "zh_cn" -> "lang/zh_CN.yml";
+            default -> "lang/" + locale + ".yml";
+        };
+    }
+
+    private static void migrateLegacyFile(File folder, String locale, File target) {
+        String legacy = switch (locale) {
+            case "en_us" -> "en_US.yml";
+            case "zh_cn" -> "zh_CN.yml";
+            default -> null;
+        };
+        if (legacy == null) {
+            return;
         }
-        String normalized = text.trim().replace('-', '_');
-        for (String locale : LOCALES) {
-            if (locale.equalsIgnoreCase(normalized)) {
-                return locale;
-            }
+        File source = new File(folder, legacy);
+        if (!source.isFile()) {
+            return;
         }
-        return null;
+        try {
+            Files.copy(source.toPath(), target.toPath());
+        } catch (Exception ignored) {
+        }
     }
 }

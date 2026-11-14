@@ -1,0 +1,7 @@
+lang#items:
+  ru_ru:
+    item.woodworkingsaw.saw_table: Столярный верстак
+
+translations#categories:
+  ru_ru:
+    category.woodworkingsaw.items: Столярные верстаки

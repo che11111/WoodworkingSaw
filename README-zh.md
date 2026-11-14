@@ -112,9 +112,9 @@ WoodworkingSaw 为服务端提供一个锯木台。可以将木板加工成楼�
 
 ## 配置
 
-- `plugins/WoodworkingSaw/config.yml` — 语言、更新检查、潜行整组、音效、动作栏、CraftEngine 资源。
+- `plugins/WoodworkingSaw/config.yml` — 语言、更新检查、潜行整组、音效、动作栏、CraftEngine 资源。`language: auto` 跟随服务器 Locale，也可填写 `zh_cn.yml` 这类文件名。
 - `plugins/WoodworkingSaw/transformations.yml` — 右键转化规则（`input`/`output`/`input-amount`/`output-amount`）。
-- `plugins/WoodworkingSaw/lang/` — 文案（`zh_CN.yml`、`en_US.yml`）。
+- `plugins/WoodworkingSaw/lang/` — 支持英语、简体中文、日语、韩语、繁体中文、德语、法语、西班牙语和俄语；自动识别失败时回退到 `en_us.yml`。
 - `plugins/WoodworkingSaw/resources/` — CraftEngine 资源包备份。
 
 修改后执行 `/sawtable reload`。

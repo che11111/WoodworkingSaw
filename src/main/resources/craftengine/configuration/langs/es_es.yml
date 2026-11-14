@@ -1,0 +1,7 @@
+lang#items:
+  es_es:
+    item.woodworkingsaw.saw_table: Mesa de aserrado
+
+translations#categories:
+  es_es:
+    category.woodworkingsaw.items: Mesas de aserrado
